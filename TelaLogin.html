@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Fontes -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!-- Imagem -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,17 +20,19 @@
         </div>
 
         <h1 class="texto-login">Login</h1>
-        <form action="/login" method="post">
+        <form action="/login" method="post" class="login-form">
             <!-- Email -->
             <label for="email">Email</label>
-            <input type="email" id="email" class="input_dados" placeholder="Digite aqui...">
+            <input type="email" id="email" class="input-dados" placeholder="Digite aqui..." required>
             <!-- Senha -->
             <label for="senha">Senha</label>
-            <input type="password" id="senha" class="input-field" name="senha" placeholder="Digite aqui...">
+            <input type="password" id="senha" class="input-dados" name="senha" placeholder="Digite aqui..." required>
+            
             <button type="submit" class="enter_dados">Entrar</button>
         </form>
-        <a href="#" class="link-secondary">Cadastre-se</a>
+       
     </main>
+             <a href="#" class="tela-cadastro">Cadastre-se</a>
 </body>
 
 </html>
