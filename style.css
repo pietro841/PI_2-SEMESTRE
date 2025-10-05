@@ -1,23 +1,22 @@
 /* página login */
-body {
-    width: 100%;
+body{
     min-height: 100vh;
     /* Style */
-    border-radius: 25px;
     background: #D9D9D9;
     /* Caracteristicas */
     padding: 0;
     margin: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: Inter;
 }
-
-.tela-login {
+.tela-login{
+    /* Layout */
     width: 650px;
-    height: 757px;
-     box-sizing: border-box; 
+    min-height: 757px;
+    box-sizing: border-box; 
     /* Style */
     border-radius: 25px;
     background: #FFF;
@@ -25,13 +24,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px 50px;
 }
-.texto-login{
+.tela-login h1{
     /* Layout */
     width: 319px;
     height: 47px;
     /* Style */
-    color: #000;
+    color: #000000;
     text-align: center;
     font-size: 48px;
     font-style: normal;
@@ -39,16 +39,79 @@ body {
     line-height: normal;
 }
 .login-form{
-    width: 520px;
+    width: 90%;
     height: 70px;
-     display: flex;
+    display: flex;
     flex-direction: column;
-    gap: 0.2rem;
-    margin-bottom: 3rem; 
+    gap: 0.4rem;
+    margin-bottom: 1rem;  
+}
+.login-form label{
+    width: 330px;
+    margin-left: 0;
+    margin-bottom: 1px;
+    padding-left: 20px;
 }
 .input-dados{
     width: 520px;
     height: 70px;
     border-radius: 30px;
     background: rgba(153, 153, 153, 0.60);
+    border: none;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    padding: 15px 25px;
+}
+    .input-dados::placeholder{
+    color: rgb(105, 105, 105) 
+}
+.btn-entrar{
+    /* Layout */
+    width: 190px;
+    height: 80px;
+    border-radius: 40px;
+    background: #D9D9D9;
+    border: none;
+    /* Tipografia */
+    color: #000;
+    font-family: Inter;
+    font-size: 2em;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    /* Centralização do botão */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+.btn-entrar:hover{
+    background-color: gray;     /*Cor quando passar o mouse encima*/
+}
+.link-esqueceu-senha{
+    margin-top: 285px;
+    display: block;
+    font-family: Inter;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-style: italic;
+    line-height: normal;
+}
+.link-esqueceu-senha:hover{
+    text-decoration:underline;
+}
+.link-cadastro{
+    margin-top: 40px;
+    display: block;
+    text-align: center;
+    font-family: Inter;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-style: italic;
+    line-height: normal;
+}
+.link-cadastro:hover{
+    text-decoration:underline;
 }
