@@ -103,3 +103,12 @@ body{
 #link-cadastro:hover{
     text-decoration:underline;
 }
+.esqueceu-senha{
+    height: 675px;
+}
+.btn-voltar-telaLog{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    
+}
