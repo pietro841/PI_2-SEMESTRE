@@ -11,16 +11,15 @@ body{
     font-family: Inter;
 }
 .tela-login{
-    width: 86%;
-    max-width: 660px;
-    min-height: 75vh;
+    width: 80%;
+    max-width: 600px;
     box-sizing: border-box; 
     border-radius: 25px;
     background: #FFF;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 50px;
+    padding: 0px 40px;
 }
 .tela-login h1{    
     color: #000000;
@@ -58,7 +57,7 @@ body{
 }
 .btn-entrar{
     width: 190px;
-    height: 80px;
+    height: 60px;
     border-radius: 40px;
     background: #D9D9D9;
     border: none;
@@ -70,13 +69,13 @@ body{
     line-height: normal;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .btn-entrar:hover{
     background-color: gray;     /*Cor quando passar o mouse encima*/
 }
 #link-esqueceu-senha{
-    margin-top: 285px;
+    margin-top: 250px;
     display: block;
     font-family: Inter;
     text-align: center;
@@ -90,7 +89,7 @@ body{
     text-decoration:underline;
 }
 #link-cadastro{
-    margin-top: 40px;
+    margin-top: 30px;
     display: block;
     text-align: center;
     font-family: Inter;
@@ -102,4 +101,17 @@ body{
 }
 #link-cadastro:hover{
     text-decoration:underline;
+}
+/* Configs tela cadastro */
+.tela-cadastro{
+    min-height: 720px;
+}
+#cadastro-email{
+    margin-bottom: 35px;
+}
+#cadastro-senha{
+    margin-bottom: 35px;
+}
+#confirmar-senha{
+    margin-bottom: 35px;
 }
