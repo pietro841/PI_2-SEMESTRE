@@ -130,7 +130,8 @@ body{
     position: fixed;
     top: 0;
     left: 0;
-    height: 50px;
+    height: 50;
+    padding-left: 40px;
 }
 #nome-logo{
     color: #000000;
