@@ -12,14 +12,15 @@ body{
 }
 .tela-login{
     width: 80%;
-    max-width: 600px;
+    height: 550px;
+    max-width: 500px;
     box-sizing: border-box; 
     border-radius: 25px;
     background: #FFF;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px 40px;
+    padding: 0% 40px;
 }
 .tela-login h1{    
     color: #000000;
@@ -44,13 +45,13 @@ body{
 }
 .input-dados{
     width: 100%;
-    height: 70px;
+    height: 60px;
     border-radius: 30px;
     background: rgba(153, 153, 153, 0.60);
     border: none;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     box-sizing: border-box;
-    padding: 15px 25px;
+    padding: 8px 15px;
 }
     .input-dados::placeholder{
     color: rgb(105, 105, 105) 
@@ -58,7 +59,7 @@ body{
 .btn-entrar{
     width: 190px;
     height: 60px;
-    border-radius: 40px;
+    border-radius: 70px;
     background: #D9D9D9;
     border: none;
     color: #000;
@@ -75,7 +76,7 @@ body{
     background-color: gray;     /*Cor quando passar o mouse encima*/
 }
 #link-esqueceu-senha{
-    margin-top: 250px;
+    margin-top: 200px;
     display: block;
     font-family: Inter;
     text-align: center;
@@ -125,18 +126,20 @@ body{
 }
 .topo-logo{
     width: 100%;
-    background-color: #FFF;
+    background-color: #848080;
     z-index: 1000;
     position: fixed;
     top: 0;
     left: 0;
     height: 50;
-    padding-left: 40px;
+
 }
 #nome-logo{
-    color: #000000;
+    color: #D9D9D9;
     font-size: 35px;
     font-style: normal;
     font-weight: 900;
     line-height: normal;
+      padding-left: 40px;
+
 }
