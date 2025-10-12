@@ -12,7 +12,7 @@ body{
 }
 .tela-login{
     width: 80%;
-    height: 550px;
+    height: 450px;
     max-width: 500px;
     box-sizing: border-box; 
     border-radius: 25px;
@@ -21,6 +21,8 @@ body{
     flex-direction: column;
     align-items: center;
     padding: 0% 40px;
+    margin-top: 10vh;
+
 }
 .tela-login h1{    
     color: #000000;
@@ -40,25 +42,23 @@ body{
 }
 .login-form label{
     width: 100%;
-    margin-left: 0;
+    margin-left: 10px;
     margin-bottom: 1px;
 }
 .input-dados{
     width: 100%;
-    height: 60px;
     border-radius: 30px;
     background: rgba(153, 153, 153, 0.60);
     border: none;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
     box-sizing: border-box;
     padding: 8px 15px;
 }
-    .input-dados::placeholder{
+.input-dados::placeholder{
     color: rgb(105, 105, 105) 
 }
 .btn-entrar{
     width: 190px;
-    height: 60px;
     border-radius: 70px;
     background: #D9D9D9;
     border: none;
@@ -70,13 +70,13 @@ body{
     line-height: normal;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 .btn-entrar:hover{
     background-color: gray;     /*Cor quando passar o mouse encima*/
 }
 #link-esqueceu-senha{
-    margin-top: 200px;
+    margin-top: 220px;
     display: block;
     font-family: Inter;
     text-align: center;
@@ -105,7 +105,7 @@ body{
 }
 /* Configs tela cadastro */
 .tela-cadastro{
-    min-height: 720px;
+    min-height: 530px;
 }
 #cadastro-email{
     margin-bottom: 35px;
@@ -131,15 +131,29 @@ body{
     position: fixed;
     top: 0;
     left: 0;
-    height: 50;
-
+    height: 80px;
+    display: flex;
+    align-items: center;
 }
 #nome-logo{
+    display: flex;
+    align-items: center;
+}
+.logo-icone{
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+#nome-logo span{
     color: #D9D9D9;
     font-size: 35px;
     font-style: normal;
     font-weight: 900;
     line-height: normal;
-      padding-left: 40px;
-
+    padding-left: 40px;
+    text-shadow: 
+    -2px -2px 0 black, /* Superior Esquerdo */
+     2px -2px 0 black, /* Superior Direito */
+    -2px 2px 0 black,  /* Inferior Esquerdo */
+     2px 2px 0 black;  /* Inferior Direito */
 }
