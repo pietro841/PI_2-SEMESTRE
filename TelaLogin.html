@@ -8,34 +8,46 @@
     <!-- Fontes Letras -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
-    <header class="topo-logo">
-        <div id="nome-logo">
-            <img src="./imagens/letra E maiucusla.svg" alt="Ícone EducaIA" class="logo-icone">
-            <span>EducaIA</span>
+    <header class="header-custom d-flex align-items-center">
+        <div class="logo-container">
+            <!-- ESPAÇO PARA O LOGO -->
+            <span class="text-reset custom-logo-text">EducaIA</span>
         </div>
     </header>
-    <main class="tela-login">
+    <!-- MATEI ESSA PORRA DE HEADER -->
+    <main class="container py-5">
+        <div class="custom-login-box">
+            <h1 class="login-title">Login</h1>
+            <form action="/login" method="post" class="login-form">
+                <!-- Email -->
+                <label for="email">Email</label>
+                <input type="email" id="receber-email" class="input-dados" name="email"
+                    placeholder="@p4ed.com ou @sistemapoliedro.com.br" required>
+                <!-- Senha -->
+                <label for="senha">Senha</label>
+                <input type="password" id="receber-senha" class="input-dados" name="senha" placeholder="Senha" required>
+                <!-- Botão -->
+                <button type="submit" class="btn-entrar">Entrar</button>
+            </form>
 
-        <h1>Login</h1>
-        <form action="/login" method="post" class="login-form">
-            <!-- Email -->
-            <label for="email">Email</label>
-            <input type="email" id="receber-email" class="input-dados" name="email" placeholder="@p4ed.com ou @sistemapoliedro.com.br" required>
-            <!-- Senha -->
-            <label for="senha">Senha</label>
-            <input type="password" id="receber-senha" class="input-dados" name="senha" placeholder="Senha" required>
-            <!-- Botão -->
-            <button type="submit" class="btn-entrar">Entrar</button>
-        </form>
-        
-        <a href="EsqueceuSenha.html" id="link-esqueceu-senha">Esqueceu a senha?</a>
+            <a href="EsqueceuSenha.html" id="link-esqueceu-senha">Esqueceu a senha?</a>
+        </div>
     </main>
     <a href="TelaCadastro.html" id="link-cadastro">Cadastre-se</a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

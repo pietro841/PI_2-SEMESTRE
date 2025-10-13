@@ -1,17 +1,16 @@
 /* página login */
 html, body{
-    height: 100%;
-    min-height: 100vh;
+    min-height: 100vh; 
+    font-family: 'Inter';
     background: #D9D9D9;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: Inter;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important; 
+    align-items: center !important; 
+
+    
 }
-.tela-login{
+/* .tela-login{
     width: 80%;
     height: 450px;
     max-width: 500px;
@@ -24,8 +23,21 @@ html, body{
     padding: 0% 40px;
     margin-top: 10vh;
 
+} */
+.custom-login-box {
+    width: 80%; /* Seu estilo original */
+    height: 450px;
+    max-width: 500px; /* Seu estilo original */
+    border-radius: 25px; 
+    background-color: #FFF; 
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+
+    padding: 40px; /* Substituindo 0% 40px (ajustei para o mesmo valor) */
 }
-.tela-login h1{    
+.login-title{    
     color: #000000;
     text-align: center;
     font-size: 40px;
@@ -125,33 +137,23 @@ html, body{
     top: 10px;
     left: 10px;  
 }
-.topo-logo{
-    width: 100%;
-    background-color: #848080;
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 80px;
-    display: flex;
-    align-items: center;
+/* HEADER PAGINA LOGIN */
+.header-custom{
+    background-color: #848080 !important;
+    height: 80px; 
 }
-#nome-logo{
-    display: flex;
-    align-items: center;
-}
-.logo-icone{
+/* ESSE AQUI É DA IMAGEM 
+.logo-icone{            
     display: block;
     width: 60px;
     height: 60px;
 }
-#nome-logo span{
-    color: #D9D9D9;
+*/
+
+.custom-logo-text{
+    color: #D9D9D9 !important;
     font-size: 35px;
-    font-style: normal;
     font-weight: 900;
-    line-height: normal;
-    padding-left: 40px;
     text-shadow: 
     -2px -2px 0 black, /* Superior Esquerdo */
      2px -2px 0 black, /* Superior Direito */
@@ -165,19 +167,24 @@ html, body{
     background: #00AEC7;
 }
 .left-panel{
-    width: 50%;
-    border-radius: 20px;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    border-radius: 5px;
     background: #848080;
-    padding: 20px;
+    padding: 10px;
     display: flex;
+    font-size: 16px;
     flex-direction: column;
+    top: 0;
+    left: 0;
 }
 .menu-button{
 color: #FFF;
 -webkit-text-stroke-width: 1px;
 -webkit-text-stroke-color: #FFF;
 font-family: Inter;
-font-size: 30px;
+font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
@@ -208,3 +215,18 @@ line-height: normal;
 .main-content{
     flex-grow: 1; 
 }
+#submenu-materias,
+#submenu-estilos,
+#text-detalhes{
+    display: none;
+}
+#submenu-materias.active,
+#submenu-estilos.active,
+#text-detalhes.active {
+    display: block;
+}
+#text-detalhes {
+    width: 100%; /* Exemplo de estilização */
+    margin-top: 5px; /* Exemplo de estilização */
+    resize: vertical; /* Exemplo de estilização */
+    min-height: 50px; /* Exemplo de estilização */}
