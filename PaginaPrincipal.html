@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>EducaIA</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -15,22 +15,55 @@
     <body class="layout-principal">
         <div class="d-flex w-100 vh-100 justify-content-start">
             <!-- Opções para gerar a imagem -->
-            <aside class="w-20 rounded-4  rounded-start-0  p-4 d-flex flex-column bg-cinza-custom">
-
+            <aside class="w-25 rounded-4  rounded-start-0  p-4  d-flex  flex-column vh-100 align-items-center bg-cinza-custom">
+                    <!-- MATERIAS -->
                 <div class="menu-group">
-                    <div class="fs-3 fw-normal text-white mb-2">Matérias</div> 
-            
-                    <div class="btn-group rounded-4 h-84" role="group" id="materia_group">
+                    <button class=" bnt btn-materia-cor fs-3 fw-normal text-white mb-2" 
+                        style="width: 150px; height: 80px";    
+                        type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#opcoesMatriculas" 
+                        aria-expanded="true" 
+                        aria-controls="opcoesMatriculas">Matérias
+                    </button> 
+                    <div class="collapse show" id="opcoesMaterias">
+                        <div class="btn-group " role="group" id="materia_group">
                 
-                        <input type="radio" class="btn-check" name="materia_escolhida" id="btnradioFisica" autocomplete="off" value="Fisica" checked>
-                        <label class="btn btn-materia-cor  fs-3 fw-normal" for="btnradioFisica">FÍSICA</label>
+                            <input type="radio" class="btn-check" name="materia_escolhida" id="btnradioFisica" autocomplete="off" value="Fisica">
+                            <label class="btn fs-3 fw-normal" for="btnradioFisica">Física</label>
 
-                        <input type="radio" class="btn-check" name="materia_escolhida" id="btnradioQuimica" autocomplete="off" value="Quimica">
-                        <label class="btn btn-materia-cor  fs-3 fw-normal" for="btnradioQuimica">QUÍMICA</label>
+                            <input type="radio" class="btn-check" name="materia_escolhida" id="btnradioQuimica" autocomplete="off" value="Quimica">
+                            <label class="btn fs-3 fw-normal" for="btnradioQuimica">Química</label>
                     
+                        </div>
+                    </div>
+                
+                    <!-- ESTILOS -->
+                    <div class="mb-4"></div> 
+    
+                    <button class=" btn btn-estilo fs-3 fw-normal text-white mb-2" 
+                        style="width: 150px; height: 80px;"
+                        type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#opcoesEstilos" 
+                        aria-expanded="true" 
+                        aria-controls="opcoesEstilos">Estilos
+                    </button> 
+    
+                    <div class="collapse show" id="opcoesEstilos"> 
+                        <div class="btn-group" role="group" id="estilo_group">
+        
+                            <input type="radio" class="btn-check" name="estilo_escolhido" id="btnradioVetor" autocomplete="off" value="Vetor">
+                            <label class="btn btn-info fs-3 fw-normal" for="btnradioVetor">Vetor</label>
+
+                            <input type="radio" class="btn-check" name="estilo_escolhido" id="btnradioDesenho" autocomplete="off" value="Desenho">
+                            <label class="btn btn-info fs-3 fw-normal" for="btnradioDesenho">Desenho</label>
+            
+                            <input type="radio" class="btn-check" name="estilo_escolhido" id="btnradioRealista" autocomplete="off" value="Realista">
+                            <label class="btn btn-info fs-3 fw-normal" for="btnradioRealista">Realista</label>
+                        </div>
                     </div>
                 </div>
-        
             </aside>
             <!-- Caixa de conversa com a IA -->
             <main class="ms-auto"></main>

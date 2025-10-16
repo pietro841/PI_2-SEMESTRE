@@ -128,9 +128,7 @@ body{
 #confirmar-senha{
     margin-bottom: 35px;
 }
-.esqueceu-senha{
-    height: 675px;
-}
+
 .btn-voltar-telaLog{
     position: absolute;
     top: 10px;
@@ -185,23 +183,22 @@ body{
 
 /* Cor do botão de Matérias: #00AEC7 (incluindo texto) */
 .btn-materia-cor {
-    background-color: #00AEC7 !important;
-    color: #FFF !important; 
-    border-color: #00AEC7 !important; /* Garante que a borda na inatividade também seja a cor certa */
+    background-color: #00AEC7 ;
+    color: #FFF ; 
+    border-color: #007f91;
+    border-radius: 20px;
+    font-family: Inter;
 }
 
-/* Altura fixa (84px) */
-.h-84 {
-    height: 84px;
-}
+
+
 /* 3. Estilos de Ativação do Botão (Opcional, para melhorar o visual) */
 /* Se o botão estiver checado (selecionado), escureça-o um pouco. */
-.btn-check:checked + .btn-materia-cor {
-    background-color: #007f91 !important; /* Cor um pouco mais escura para o estado ativo */
-    border-color: #007f91 !important;
+.menu-group button:hover {
+    background-color: #007f91; /* Cor um pouco mais escura para o estado ativo */
 }
 
 /* 4. Único remanescente do seu CSS estrutural (pode ser mantido ou trocado por 'flex-grow-1') */
 main.flex-grow-1 {
-    flex-grow: 1 !important; 
+    flex-grow: 1 ; 
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EducaIA - Alteração de senha</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -13,20 +13,19 @@
 <body class="layout-entrada">
      <header class="topo-logo">
         <div id="nome-logo">
-            <img src="./imagens/e minusculo.svg" alt="Ícone EducaIA" class="logo-icone">
+            <img src="" alt="Ícone EducaIA" class="logo-icone">
             <span>EducaIA</span>
         </div>
     </header>
     <main class="tela-login esqueceu-senha">
 
         <h1>Alterar Senha</h1>
-        <form action="/login" method="post" class="login-form">
+
+        <form action="/recuperacao-senha" method="post" class="login-form">
             <!-- Email -->
-            <label for="email">Nova Senha</label>
-            <input type="senha" id="nova-senha" class="input-dados" name="senha-nova" placeholder="Nova senha" required>
-            <!-- Senha -->
-            <label for="senha">Confirmar Senha</label>
-            <input type="password" id="confirmar-novasenha" class="input-dados" name="senha" placeholder=" Confirmar senha" required>
+            <label for="email">Digite seu email:</label>
+            <input type="email" id="senha-recuperacao" class="input-dados" placeholder="@p4ed.com ou @sistemapoliedro.com.br"name="email-recuperacao "required>
+            
             <!-- Botão -->
             <button type="submit" class="btn-entrar">Confirmar</button>
         </form>
