@@ -182,23 +182,44 @@ body{
 }
 
 /* Cor do botão de Matérias: #00AEC7 (incluindo texto) */
-.btn-materia-cor {
+button.btn-materia-cor{
     background-color: #00AEC7 ;
     color: #FFF ; 
-    border-color: #007f91;
-    border-radius: 20px;
     font-family: Inter;
 }
-
-
-
-/* 3. Estilos de Ativação do Botão (Opcional, para melhorar o visual) */
-/* Se o botão estiver checado (selecionado), escureça-o um pouco. */
-.menu-group button:hover {
-    background-color: #007f91; /* Cor um pouco mais escura para o estado ativo */
+/* BOTAO AZUL MOUSE */
+button.btn-materia-cor:hover {
+    background-color: #007f91; 
 }
-
+/* BOTAO AZUL TAB */
+button.btn-materia-cor:focus{
+    background-color: #007f91;
+}
 /* 4. Único remanescente do seu CSS estrutural (pode ser mantido ou trocado por 'flex-grow-1') */
 main.flex-grow-1 {
     flex-grow: 1 ; 
+}
+/* BOTAO VERMELHO*/
+button.btn-estilo-cor{
+    background-color: #EE2252;
+}
+/* BOTAO VERMELHO MOUSE */
+button.btn-estilo-cor:hover{
+    background-color: #C80031;
+}
+/* BOTAO VERMELHO TAB */
+button.btn-estilo-cor:focus{
+    background-color: #C80031;
+}
+/* BOTAO LARANJA COR */
+button.btn-detalhes-cor{
+    background-color: #F58220;
+}
+/* BOTAO LARANJA COR */
+button.btn-detalhes-cor:hover{
+    background-color: #D6690A;
+}
+/* BOTAO LARANJA TAB */
+button.btn-detalhes-cor:focus{
+    background-color: #D6690A;
 }
