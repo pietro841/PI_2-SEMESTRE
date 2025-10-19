@@ -152,8 +152,9 @@ body{
 }
 .logo-icone{
     display: block;
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: auto;
+   
 }
 #nome-logo span{
     color: #D9D9D9;
@@ -161,7 +162,7 @@ body{
     font-style: normal;
     font-weight: 900;
     line-height: normal;
-    padding-left: 40px;
+    padding-left: 2px;
     text-shadow: 
     -2px -2px 0 black, /* Superior Esquerdo */
      2px -2px 0 black, /* Superior Direito */
@@ -176,9 +177,45 @@ body{
     padding: 0 ;
     height: 100vh;
 }
-/* Cor de fundo do painel lateral*/
+/* CLASSE DO ASIDE*/
 .bg-cinza-custom {
     background-color: #848080;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1040;
+    transition: width 0.4s ease-in-out, padding 0.4s ease-in-out; 
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bg-cinza-custom.expanded {
+    width: 23vw; 
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 4.5rem;
+}
+.bg-cinza-custom.minimized{
+    width: 80px; /* Largura mínima para o ícone */
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    /* Reduz o padding superior para não sobrar tanto espaço */
+    padding-top: 4.5rem;
+}
+.bg-cinza-custom.minimized .menu-content-wrapper {
+    max-height: 0; 
+    padding: 0;
+    margin: 0; 
+    
+    /* Oculta o conteúdo e o texto */
+    opacity: 0;
+    visibility: hidden;
+    /* Transição muito rápida para o conteúdo sumir antes da barra fechar */
+    transition: opacity 0.1s ease-in-out, visibility 0.1s; 
 }
 
 /* Cor do botão de Matérias: #00AEC7 (incluindo texto) */
@@ -222,4 +259,14 @@ button.btn-detalhes-cor:hover{
 /* BOTAO LARANJA TAB */
 button.btn-detalhes-cor:focus{
     background-color: #D6690A;
+}
+/* COR DAS OPÇÔES */
+label.btn-opcao-cor{
+    background-color: #D9D9D9;
+}
+button.btn-opcao-cor{
+    background-color: #D9D9D9;
+}
+label.btn-opcao-cor:active{
+    background-color: gray;
 }
