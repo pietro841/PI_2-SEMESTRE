@@ -186,14 +186,14 @@ body{
     left: 0;
     height: 100vh;
     z-index: 1040;
-    transition: width 0.4s ease-in-out, padding 0.4s ease-in-out; 
+    transition: width 0.3s ease-in-out, padding 0.3s ease-in-out; 
     overflow-x: hidden;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     align-items: center;
 }
-.bg-cinza-custom.expanded {
-    width: 23vw; 
+.bg-cinza-custom.expanded{
+    width: 25vw; 
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 1rem;
@@ -210,7 +210,7 @@ body{
     max-height: 0; 
     padding: 0;
     margin: 0; 
-    
+    overflow: hidden;
     /* Oculta o conteúdo e o texto */
     opacity: 0;
     visibility: hidden;
@@ -266,7 +266,56 @@ label.btn-opcao-cor{
 }
 button.btn-opcao-cor{
     background-color: #D9D9D9;
+    display: block; 
+    width: 100%; 
+    margin-bottom: 0.5rem; /* Adiciona espaço entre os botões empilhados */
+    text-align: center;
+    border-radius: 0.5rem;
 }
 label.btn-opcao-cor:active{
     background-color: gray;
+}
+
+/* MEDIA QUERY: AJUSTE PARA TELAS PEQUENAS (MOBILE) */
+
+@media (max-width: 768px) {
+    /* A largura de 768px geralmente marca o limite entre tablet/mobile e desktop */
+
+    .bg-cinza-custom.expanded {
+        /* Aumenta a largura para 80% da tela no mobile */
+        width: 80vw; 
+        
+        /* Opcional: Garante que a barra feche para um tamanho menor no mobile, se desejar */
+        /* Se você já tem 60px no .minimized, isso não é estritamente necessário, mas é bom ter o controle */
+    }
+}
+
+
+/* VERSÃO CORRETA E LIMPA (SEM !IMPORTANT) */
+#sidebar .btn-opcao-cor {
+    /* A prioridade do ID deve ser suficiente para vencer o Bootstrap */
+    display: block; 
+    width: 100%; 
+    
+    /* Mantenha o restante da sua estilização */
+    margin-bottom: 0.5rem; 
+    text-align: center;
+    border-radius: 0.5rem;
+}
+/* Configuração do TEXTAREA dentro do menu Detalhes */
+#detalhes textarea.form-control {
+    /* ... (outras configurações de largura e margem) ... */
+    width: 100%; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem; 
+    
+    /* ------------------------------------------------ */
+    /* AQUI ESTÁ A CHAVE: IMPEDE QUALQUER REDIMENSIONAMENTO */
+    /* ------------------------------------------------ */
+    resize: none; 
+    
+    box-sizing: border-box; 
+    border-radius: 0.5rem; 
 }
