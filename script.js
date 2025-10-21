@@ -36,26 +36,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // ===================================
-    // 4. LÓGICA DO TOGGLE PRINCIPAL - FECHA IMEDIATAMENTE (SEM DELAY)
-    // ===================================
-    toggleButton.addEventListener('click', function () {
+// 4. LÓGICA DO TOGGLE PRINCIPAL - FECHA IMEDIATAMENTE (COM CORREÇÃO DE FOCO)
+// ===================================
+toggleButton.addEventListener('click', function () {
 
-        // Ação de Fechar (Sidebar está expandido)
-        if (sidebar.classList.contains('expanded')) {
+    if (sidebar.classList.contains('expanded')) {
 
-            // PRIMEIRO, inicia o fechamento dos colapsos e a limpeza do textarea
-            closeAllCollapses();
+        closeAllCollapses();
 
-            // AGORA, FECHA O SIDEBAR IMEDIATAMENTE (O DELAY SUMIU)
-            sidebar.classList.remove('expanded');
-            sidebar.classList.add('minimized');
-
-        } else {
-            // Ação de Abrir (Sidebar está minimizado)
-            sidebar.classList.remove('minimized');
-            sidebar.classList.add('expanded');
+        // 🟢 CORREÇÃO JS: Remove o foco do textarea antes de fechar o sidebar.
+        // Isso elimina a borda que está vazando!
+        if (comandoTextarea) {
+            comandoTextarea.blur(); 
         }
-    });
+        
+        // Fecha o sidebar IMEDIATAMENTE.
+        sidebar.classList.remove('expanded');
+        sidebar.classList.add('minimized');
+
+    } else {
+        sidebar.classList.remove('minimized');
+        sidebar.classList.add('expanded');
+    }
+});
 
     // Opcional: Garante que a sidebar comece no estado minimizado
     if (!sidebar.classList.contains('expanded') && !sidebar.classList.contains('minimized')) {

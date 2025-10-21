@@ -303,7 +303,7 @@ label.btn-opcao-cor:active{
     border-radius: 0.5rem;
 }
 /* Configuração do TEXTAREA dentro do menu Detalhes */
-#detalhes textarea.form-control {
+#detalhes textarea.form-control{
     /* ... (outras configurações de largura e margem) ... */
     width: 100%; 
     margin-left: auto;
@@ -315,7 +315,6 @@ label.btn-opcao-cor:active{
     /* AQUI ESTÁ A CHAVE: IMPEDE QUALQUER REDIMENSIONAMENTO */
     /* ------------------------------------------------ */
     resize: none; 
-    
     box-sizing: border-box; 
     border-radius: 0.5rem; 
 }
