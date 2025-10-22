@@ -1,103 +1,143 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EducaIA</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
-    <!-- Imagens -->
-    <link rel="stylesheet" href="style.css">
-    <!-- FAVICON -->
-    <link rel="icon" href="./imagens/LOGOEDUCAIAA.svg" type="image/svg+xml">
-    <!-- BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-</head>
-
-<body class="layout-principal">
-    <div class="d-flex w-100 vh-100 justify-content-start">
-        <!-- BOTAO MENU -->
-        <!-- Opções para gerar a imagem -->
-        <aside id="sidebar" class=" bg-cinza-custom minimized">
-            <button id="btnToggleSidebar" class="btn btn-gray p-2"
-                style="position: absolute; top: 1rem; left: 1rem; z-index: 1050;">
-                <i class="bi bi-list fs-4"></i>
-            </button>
-            <!-- MATERIAS -->
-            <div class="menu-content-wrapper">
-                <div class="menu-group">
-                    <button class=" btn btn-materia-cor fs-5 fw-normal text-white mb-2  w-100 py-3" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#opcoesMatriculas" aria-expanded="false"
-                        aria-controls="opcoesMatriculas">
-                        Matérias
-                    </button>
-                    <div class="collapse w-100" id="opcoesMatriculas">
-                        <div role="group" id="materia_group">
-
-                            <input type="radio" class="btn-check" name="materia_escolhida" id="btnradioFisica"
-                                autocomplete="off" value="Fisica">
-                            <label class="btn fs-5 fw-normal btn-opcao-cor" for="btnradioFisica">Física</label>
-                            <input type="radio" class="btn-check" name="materia_escolhida" id="btnradioQuimica"
-                                autocomplete="off" value="Quimica">
-                            <label class="btn fs-5 fw-normal btn-opcao-cor" for="btnradioQuimica">Química</label>
-
-                        </div>
-                    </div>
-                    <!-- ESTILOS -->
-                    <div class="mb-5"></div>
-                    <button class="btn btn-estilo-cor fs-5 fw-normal text-white mb-2 w-100 py-3" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#opcoesEstilos" aria-expanded="false"
-                        aria-controls="opcoesEstilos">
-                        Estilos
-                    </button>
-                    <div class="collapse w-100 " id="opcoesEstilos">
-                        <div role="group" id="estilo_group">
-
-                            <input type="radio" class="btn-check" name="estilo_escolhido" id="btnradioVetor"
-                                autocomplete="off" value="Vetor">
-                            <label class="btn  fs-5 fw-normal btn-opcao-cor" for="btnradioVetor">Vetor</label>
-                            <input type="radio" class="btn-check" name="estilo_escolhido" id="btnradioDesenho"
-                                autocomplete="off" value="Desenho">
-                            <label class="btn  fs-5 fw-normal btn-opcao-cor" for="btnradioDesenho">Desenho</label>
-                            <input type="radio" class="btn-check" name="estilo_escolhido" id="btnradioRealista"
-                                autocomplete="off" value="Realista">
-                            <label class="btn fs-5 fw-normal btn-opcao-cor" for="btnradioRealista">Realista</label>
-
-                        </div>
-                    </div>
-                    <!-- DETALHES -->
-                    <div class="mb-5"></div>
-                    <button class=" btn btn-detalhes-cor fs-5 fw-normal text-white mb-2 w-100 py-3" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#detalhes" aria-expanded="false"
-                        aria-controls="detalhes">
-                        Detalhes
-                    </button>
-                    <div class="collapse w-100" id="detalhes">
-                        <form id="detalhes-form" method="POST" action="/">
-                            <div role="group" id="detalhes_group">
-
-                                <textarea class="form-control mb-3" id="comando-textarea" rows="1"></textarea>
-                                <button class="btn w-100 fs-5 fw-normal btn-opcao-cor">Enviar</button>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EducaIA</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <!-- Imagens -->
+        <link rel="stylesheet" href="style.css">
+        <!-- FAVICON -->
+        <link rel="icon" href="./imagens/LOGOEDUCAIAA.svg" type="image/svg+xml">
+        <!-- BOOTSTRAP -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        >
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    </head>
+    <body class="layout-principal">
+        <div class="d-flex w-100 vh-100 justify-content-start">
+            <!-- BOTAO MENU -->
+            <!-- Opções para gerar a imagem -->
+            <aside id="sidebar" class="bg-cinza-custom minimized">
+                <button id="btnToggleSidebar" class="btn btn-gray p-2" style="position: absolute; top: 1rem; left: 1rem; z-index: 1050;">
+                    <i class="bi bi-list fs-4"></i>
+                </button>
+                <nav class="menu-content-wrapper pt-5">
+                    <ul class="list-unstyled menu-principal">
+                        <li class="menu-item cor-materia">
+                            <a
+                                href="#materias-colapso"
+                                class="menu-link collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#materias-colapso"
+                                aria-expanded="false"
+                            >
+                                <i class="bi bi-book"></i>
+                                <span class="menu-text">Matérias</span>
+                            </a>
+                            <div class="collapse w-100" id="materias-colapso">
+                                <a
+                                    href="#fisica-subareas"
+                                    class="sub-menu-toggle collapsed"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#fisica-subareas"
+                                >
+                                    <span class="menu-text">Física</span>
+                                </a>
+                                <div class="collapse w-100" id="fisica-subareas">
+                                    <a href="#" class="sub-menu-link" data-subarea-load="Mecanica">Mecânica</a>
+                                    <a href="#" class="sub-menu-link" data-subarea-load="Optica">Óptica</a>
+                                    <a href="#" class="sub-menu-link" data-subarea-load="Eletricidade">Eletricidade</a>
+                                    <a href="#" class="sub-menu-link" data-subarea-load="Termodinamica">Termodinâmica</a>
+                                </div>
+                                <a
+                                    href="#quimica-subareas"
+                                    class="sub-menu-toggle collapsed"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#quimica-subareas"
+                                >
+                                    <span class="menu-text">Química</span>
+                                </a>
+                                <div class="collapse w-100" id="quimica-subareas"></div>
                             </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </aside>
-        <!-- Caixa de conversa com a IA -->
-        <main class="ms-auto"></main>
-    </div>
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-</body>
-
+                        </li>
+                        <li class="menu-item cor-estilo">
+                            <a
+                                href="#estilos-colapso"
+                                class="menu-link collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#estilos-colapso"
+                            >
+                                <i class="bi bi-palette"></i>
+                                <span class="menu-text">Estilos</span>
+                            </a>
+                            <div class="collapse w-100" id="estilos-colapso">
+                                <div role="group" id="estilo_group" class="area-de-opcoes-compacta">
+                                    <label class="sub-menu-link" for="btnradioVetor">Vetor</label>
+                                    <label class="sub-menu-link" for="btnradioDesenho">Desenho</label>
+                                    <label class="sub-menu-link" for="btnradioRealista">Realista</label>
+                                    <input
+                                        type="radio"
+                                        class="btn-check d-none"
+                                        name="estilo_escolhido"
+                                        id="btnradioVetor"
+                                        autocomplete="off"
+                                        value="Vetor"
+                                    >
+                                    <input
+                                        type="radio"
+                                        class="btn-check d-none"
+                                        name="estilo_escolhido"
+                                        id="btnradioDesenho"
+                                        autocomplete="off"
+                                        value="Desenho"
+                                    >
+                                    <input
+                                        type="radio"
+                                        class="btn-check d-none"
+                                        name="estilo_escolhido"
+                                        id="btnradioRealista"
+                                        autocomplete="off"
+                                        value="Realista"
+                                    >
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu-item cor-detalhes">
+                            <a
+                                href="#detalhes-colapso"
+                                class="menu-link collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#detalhes-colapso"
+                            >
+                                <i class="bi bi-sliders"></i>
+                                <span class="menu-text">Detalhes (Edição)</span>
+                            </a>
+                            <div class="collapse w-100" id="detalhes-colapso">
+                                <div class="area-de-edicao p-3">
+                                    <textarea
+                                        class="form-control mb-2"
+                                        id="comando-edicao-textarea"
+                                        rows="2"
+                                        placeholder="Girar, mudar cor, etc..."
+                                    ></textarea>
+                                    <button class="btn btn-light w-100" id="btnEnviarEdicao">Enviar Edição</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <!-- Caixa de conversa com a IA -->
+            <main class="ms-auto"></main>
+        </div>
+        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
 </html>

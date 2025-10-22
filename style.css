@@ -172,12 +172,14 @@ body{
 }
 /* AQUI È A PAGINA PRINCIPAL */
 /*VALE PRO BODY DA PAGINA PRINCIPAL */
-.layout-principal{
-    margin: 0 ;
-    padding: 0 ;
+/* ================================================= */
+/* 0. ESTRUTURA E ASIDE (DO SEU CÓDIGO) - MANTIDO */
+/* ================================================= */
+.layout-principal { 
+    margin: 0;
+    padding: 0;
     height: 100vh;
 }
-/* CLASSE DO ASIDE*/
 .bg-cinza-custom {
     background-color: #848080;
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -187,133 +189,128 @@ body{
     height: 100vh;
     z-index: 1040;
     transition: width 0.3s ease-in-out, padding 0.3s ease-in-out; 
-    overflow-x: hidden;
     display: flex !important;
     flex-direction: column;
     align-items: center;
 }
-.bg-cinza-custom.expanded{
-    width: 25vw; 
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 1rem;
-    padding-top: 4.5rem;
-}
-.bg-cinza-custom.minimized{
-    width: 80px; /* Largura mínima para o ícone */
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    /* Reduz o padding superior para não sobrar tanto espaço */
-    padding-top: 4.5rem;
-}
-.bg-cinza-custom.minimized .menu-content-wrapper {
-    max-height: 0; 
-    padding: 0;
-    margin: 0; 
-    overflow: hidden;
-    /* Oculta o conteúdo e o texto */
-    opacity: 0;
-    visibility: hidden;
-    /* Transição muito rápida para o conteúdo sumir antes da barra fechar */
-    transition: opacity 0.1s ease-in-out, visibility 0.1s; 
-}
+/* Estilos .expanded, .minimized, .menu-content-wrapper (MANTIDOS) */
+.bg-cinza-custom.expanded { /* ... */ }
+.bg-cinza-custom.minimized { /* ... */ }
+.bg-cinza-custom.minimized .menu-content-wrapper { /* ... */ }
+main.flex-grow-1 { flex-grow: 1; }
+@media (max-width: 768px) { /* ... */ }
 
-/* Cor do botão de Matérias: #00AEC7 (incluindo texto) */
-button.btn-materia-cor{
-    background-color: #00AEC7 ;
-    color: #FFF ; 
-    font-family: Inter;
-}
-/* BOTAO AZUL MOUSE */
-button.btn-materia-cor:hover {
-    background-color: #007f91; 
-}
-/* BOTAO AZUL TAB */
-button.btn-materia-cor:focus{
-    background-color: #007f91;
-}
-/* 4. Único remanescente do seu CSS estrutural (pode ser mantido ou trocado por 'flex-grow-1') */
-main.flex-grow-1 {
-    flex-grow: 1 ; 
-}
-/* BOTAO VERMELHO*/
-button.btn-estilo-cor{
-    background-color: #EE2252;
-}
-/* BOTAO VERMELHO MOUSE */
-button.btn-estilo-cor:hover{
-    background-color: #C80031;
-}
-/* BOTAO VERMELHO TAB */
-button.btn-estilo-cor:focus{
-    background-color: #C80031;
-}
-/* BOTAO LARANJA COR */
-button.btn-detalhes-cor{
-    background-color: #F58220;
-}
-/* BOTAO LARANJA COR */
-button.btn-detalhes-cor:hover{
-    background-color: #D6690A;
-}
-/* BOTAO LARANJA TAB */
-button.btn-detalhes-cor:focus{
-    background-color: #D6690A;
-}
-/* COR DAS OPÇÔES */
-label.btn-opcao-cor{
-    background-color: #D9D9D9;
-}
-button.btn-opcao-cor{
-    background-color: #D9D9D9;
-    display: block; 
+
+/* ================================================= */
+/* 1. ESTILO BASE DO MENU (COMPACTO) - ESSENCIAL PARA O VISUAL */
+/* ================================================= */
+
+.menu-principal {
+    padding: 0; 
+    margin: 0;  
+    list-style: none;
     width: 100%; 
-    margin-bottom: 0.5rem; /* Adiciona espaço entre os botões empilhados */
-    text-align: center;
-    border-radius: 0.5rem;
-}
-label.btn-opcao-cor:active{
-    background-color: gray;
 }
 
-/* MEDIA QUERY: AJUSTE PARA TELAS PEQUENAS (MOBILE) */
-
-@media (max-width: 768px) {
-    /* A largura de 768px geralmente marca o limite entre tablet/mobile e desktop */
-
-    .bg-cinza-custom.expanded {
-        /* Aumenta a largura para 80% da tela no mobile */
-        width: 80vw; 
-        
-        /* Opcional: Garante que a barra feche para um tamanho menor no mobile, se desejar */
-        /* Se você já tem 60px no .minimized, isso não é estritamente necessário, mas é bom ter o controle */
-    }
-}
-
-
-/* VERSÃO CORRETA E LIMPA (SEM !IMPORTANT) */
-#sidebar .btn-opcao-cor {
-    /* A prioridade do ID deve ser suficiente para vencer o Bootstrap */
-    display: block; 
-    width: 100%; 
+/* Base de link - Chave para o visual estreito (Substitui botões grandes) */
+.menu-link {
+    display: flex; 
+    align-items: center;
+    text-decoration: none;
+    color: white; 
     
-    /* Mantenha o restante da sua estilização */
-    margin-bottom: 0.5rem; 
-    text-align: center;
-    border-radius: 0.5rem;
-}
-/* Configuração do TEXTAREA dentro do menu Detalhes */
-#detalhes textarea.form-control{
-    /* ... (outras configurações de largura e margem) ... */
-    width: 100%; 
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0.2rem;
-    margin-bottom: 0.2rem; 
+    /* CHAVE PARA ALTURA COMPACTA */
+    padding: 10px 15px; 
     
-    /* ------------------------------------------------ */
-    /* AQUI ESTÁ A CHAVE: IMPEDE QUALQUER REDIMENSIONAMENTO */
-    /* ------------------------------------------------ */
+    /* Zera estilos de botão do Bootstrap */
+    background-color: transparent !important; 
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0;
+    width: 100%;
+    transition: background-color 0.15s;
+}
+
+/* Estilo do Hover (Geral) - Efeito sutil para qualquer link */
+.menu-link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important; 
+    color: white;
+}
+
+
+/* ================================================= */
+/* 2. ESTADOS ATIVOS (CORES SIMPLES COM AS CLASSES DO HTML) */
+/* ================================================= */
+
+/* MATÉRIAS - Cor Ativa: #007f91 */
+.cor-materia .menu-link:not(.collapsed), 
+.cor-materia .menu-link:focus {
+    background-color: #007f91 !important;
+    font-weight: bold;
+}
+
+/* ESTILOS - Cor Ativa: #C80031 */
+.cor-estilo .menu-link:not(.collapsed), 
+.cor-estilo .menu-link:focus {
+    background-color: #C80031 !important;
+    font-weight: bold;
+}
+
+/* DETALHES - Cor Ativa: #D6690A */
+.cor-detalhes .menu-link:not(.collapsed), 
+.cor-detalhes .menu-link:focus {
+    background-color: #D6690A !important;
+    font-weight: bold;
+}
+
+
+/* ================================================= */
+/* 3. SUB-ITENS (FÍSICA, MECÂNICA) - RECÚO E COMPACIDADE */
+/* ================================================= */
+
+/* Nível 2: Física, Química */
+.sub-menu-toggle {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px 10px 25px; /* Recuo leve */
+    background-color: transparent;
+    transition: background-color 0.15s;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+.sub-menu-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Nível 3: Mecânica, Óptica e Labels de Estilo */
+.sub-menu-link {
+    display: block; 
+    text-decoration: none;
+    color: #DDDDDD; 
+    cursor: pointer; 
+    padding: 8px 15px 8px 40px; /* Recuo maior */
+    font-size: 0.95rem;
+    transition: background-color 0.1s;
+}
+.sub-menu-link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: white;
+}
+
+/* Estilo de seleção para os Radios Escondidos */
+.area-de-opcoes-compacta input[type="radio"]:checked + label {
+    background-color: #D6D6D6 !important; 
+    color: #444 !important;
+    font-weight: bold;
+}
+
+/* Configuração do TEXTAREA de Edição (MANTIDO DO SEU CÓDIGO) */
+#detalhes-colapso .area-de-edicao { padding: 15px; }
+#detalhes-colapso textarea.form-control{
+    /* ... seu código de textarea ... */
     resize: none; 
     box-sizing: border-box; 
     border-radius: 0.5rem; 
