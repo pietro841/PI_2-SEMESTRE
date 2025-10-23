@@ -25,11 +25,16 @@
             <!-- BOTAO MENU -->
             <!-- Opções para gerar a imagem -->
             <aside id="sidebar" class="bg-cinza-custom minimized">
-                <button id="btnToggleSidebar" class="btn btn-gray p-2" style="position: absolute; top: 1rem; left: 1rem; z-index: 1050;">
+                <button id="btnToggleSidebar" class="btn btn-gray p-2" style="position: absolute; top: 1rem; left: 1rem; z-index: 1050; " title="Menu">
                     <i class="bi bi-list fs-4"></i>
                 </button>
                 <nav class="menu-content-wrapper pt-5">
-                    <ul class="list-unstyled menu-principal">
+                    <p class="sidebar-p text-white fw-bolder text-uppercase mb-4 fs-4 text-center mb-5 fst-italic">
+                        Instruções para Geração
+                    </p>
+                    <p class="sidebar-p fw-bold text-uppercase m-0 py-2 small text-white mb-3">Escolha uma matéria e um subtópico</p>
+                    <ul class="list-unstyled menu-principal mb-4">
+                        <!-- MATERIAS -->
                         <li class="menu-item cor-materia">
                             <a
                                 href="#materias-colapso"
@@ -40,6 +45,7 @@
                             >
                                 <i class="bi bi-book"></i>
                                 <span class="menu-text">Matérias</span>
+                                <i class="bi bi-chevron-down ms-auto menu-chevron"></i>
                             </a>
                             <div class="collapse w-100" id="materias-colapso">
                                 <a
@@ -49,12 +55,26 @@
                                     data-bs-target="#fisica-subareas"
                                 >
                                     <span class="menu-text">Física</span>
+                                    <i class="bi bi-chevron-down ms-auto menu-chevron"></i>
                                 </a>
+                                <!-- SUBTOPICOS MATERIAS -->
                                 <div class="collapse w-100" id="fisica-subareas">
-                                    <a href="#" class="sub-menu-link" data-subarea-load="Mecanica">Mecânica</a>
-                                    <a href="#" class="sub-menu-link" data-subarea-load="Optica">Óptica</a>
-                                    <a href="#" class="sub-menu-link" data-subarea-load="Eletricidade">Eletricidade</a>
-                                    <a href="#" class="sub-menu-link" data-subarea-load="Termodinamica">Termodinâmica</a>
+                                    <a href="#" class="sub-menu-link" data-subarea-load="Mecanica">
+                                        Mecânica
+                                        <i class="bi bi-check-circle-fill ms-auto selected-icon"></i>
+                                    </a>
+                                    <a href="#" class="sub-menu-link" data-subarea-load="Optica">
+                                        Óptica
+                                        <i class="bi bi-check-circle-fill ms-auto selected-icon"></i>
+                                    </a>
+                                    <a href="#" class="sub-menu-link" data-subarea-load="Eletricidade">
+                                        Eletricidade
+                                        <i class="bi bi-check-circle-fill ms-auto selected-icon"></i>
+                                    </a>
+                                    <a href="#" class="sub-menu-link" data-subarea-load="Termodinamica">
+                                        Termodinâmica
+                                        <i class="bi bi-check-circle-fill ms-auto selected-icon"></i>
+                                    </a>
                                 </div>
                                 <a
                                     href="#quimica-subareas"
@@ -63,10 +83,15 @@
                                     data-bs-target="#quimica-subareas"
                                 >
                                     <span class="menu-text">Química</span>
+                                    <i class="bi bi-chevron-down ms-auto menu-chevron"></i>
                                 </a>
                                 <div class="collapse w-100" id="quimica-subareas"></div>
                             </div>
                         </li>
+                    </ul>
+                    <!-- ESTILOS DE IMAGEM -->
+                    <p class="sidebar-p fw-bold text-uppercase m-0 py-2 small text-white mb-3">Selecione um estilo para a imagem</p>
+                    <ul class="list-unstyled menu-principal mb-4">
                         <li class="menu-item cor-estilo">
                             <a
                                 href="#estilos-colapso"
@@ -76,12 +101,22 @@
                             >
                                 <i class="bi bi-palette"></i>
                                 <span class="menu-text">Estilos</span>
+                                <i class="bi bi-chevron-down ms-auto menu-chevron"></i>
                             </a>
                             <div class="collapse w-100" id="estilos-colapso">
                                 <div role="group" id="estilo_group" class="area-de-opcoes-compacta">
-                                    <label class="sub-menu-link" for="btnradioVetor">Vetor</label>
-                                    <label class="sub-menu-link" for="btnradioDesenho">Desenho</label>
-                                    <label class="sub-menu-link" for="btnradioRealista">Realista</label>
+                                    <label class="sub-menu-link" for="btnradioVetor">
+                                        Vetor
+                                        <i class="bi bi-check-circle-fill ms-auto selected-icon"></i>
+                                    </label>
+                                    <label class="sub-menu-link" for="btnradioDesenho">
+                                        Desenho
+                                        <i class="bi bi-check-circle-fill ms-auto selected-icon"></i>
+                                    </label>
+                                    <label class="sub-menu-link" for="btnradioRealista">
+                                        Realista
+                                        <i class="bi bi-check-circle-fill ms-auto selected-icon"></i>
+                                    </label>
                                     <input
                                         type="radio"
                                         class="btn-check d-none"
@@ -109,6 +144,11 @@
                                 </div>
                             </div>
                         </li>
+                    </ul>
+                    <!-- DETALHES ADICIONAIS -->
+                    <p class="sidebar-p fw-bold text-uppercase m-0 py-2 small text-white mb-3">Escreva uma mudança desejada após a geração</p>
+
+                    <ul class="list-unstyled menu-principal mb-4">
                         <li class="menu-item cor-detalhes">
                             <a
                                 href="#detalhes-colapso"
@@ -117,7 +157,8 @@
                                 data-bs-target="#detalhes-colapso"
                             >
                                 <i class="bi bi-sliders"></i>
-                                <span class="menu-text">Detalhes (Edição)</span>
+                                <span class="menu-text">Detalhes(Edição)</span>
+                                <i class="bi bi-chevron-down ms-auto menu-chevron"></i>
                             </a>
                             <div class="collapse w-100" id="detalhes-colapso">
                                 <div class="area-de-edicao p-3">
@@ -132,10 +173,66 @@
                             </div>
                         </li>
                     </ul>
+                    <div class="sidebar-footer">
+                        <button id="btnLimparSelecoes" class="btn btn-danger w-100 d-flex align-items-center justify-content-center">
+                            <i class="bi bi-trash-fill me-2"></i>
+                            Limpar Seleções
+                        </button>
+                    </div>
+                    <div class="sidebar-footer">
+                        <div
+                            id="toastSuccess"
+                            class="toast text-white bg-success custom-toast-position"
+                            role="alert"
+                            aria-live="assertive"
+                            aria-atomic="true"
+                        >
+                            <div class="toast-body fw-bold text-center">
+                                As seleções foram limpas.
+                            </div>
+                        </div>
+                        <div
+                            id="toastWarning"
+                            class="toast text-dark bg-warning custom-toast-position"
+                            role="alert"
+                            aria-live="assertive"
+                            aria-atomic="true"
+                        >
+                            <div class="toast-body fw-bold text-center">
+                                Nada a ser removido.
+                            </div>
+                        </div>
+                    </div>
                 </nav>
             </aside>
+            
             <!-- Caixa de conversa com a IA -->
-            <main class="ms-auto"></main>
+            
+            <main class="ms-auto" id="main-content">
+                    
+                    <div id="generation-area" class="card shadow-lg">
+                        <div id="image-container" class="image-placeholder">
+                            <p>O resultado da geração da imagem aparecerá aqui. Use o menu lateral para as escolhas da geração.</p>
+                        </div>
+                        <div id="prompt-bar" class="input-group p-3 border-top">
+                            <input
+                                type="text"
+                                id="prompt-input"
+                                class="form-control form-control-lg border-0 bg-light"
+                                placeholder="Digite aqui..."
+                                aria-label="Prompt de Texto para Edição"
+                            >
+                            <button
+                                class="btn btn-primary"
+                                type="button"
+                                id="btn-Send-Prompt"
+                                title="Enviar"
+                            >
+                                <i class="bi bi-play-fill fs-4"></i>
+                            </button>
+                        </div>
+                    </div>
+            </main>
         </div>
         <script src="script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
