@@ -215,7 +215,7 @@ body {
 
 /* Estilos .expanded, .minimized, .menu-content-wrapper (MANTIDOS) */
 .bg-cinza-custom.expanded {
-    width: 24vw;
+    width: 26vw;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 1rem;
@@ -491,13 +491,27 @@ main.flex-grow-1 {
 }
 
 /* AREA DE GERAÇÂO */
+ 
 #generation-area{
     border-radius: 12px;
-    max-width: 900px;
+    max-width: 650px;
     height: 75vh;
-    min-width: 300px;
+    min-width: 350px;
     min-height: 400px;
 }
+@media (max-width: 950px) {
+    #generation-area {
+        max-width: 950% !important; 
+        
+        /* Puxa a caixa para a esquerda, compensando o espaço cinza */
+        margin-left: -0px !important; 
+        margin-right: auto; 
+    }
+    
+    /* ... (mantenha as outras regras aqui) ... */
+}
+
+
 
 #image-container{
     flex-grow: 1;
@@ -538,8 +552,4 @@ main.flex-grow-1 {
     justify-content: center;
 }
 
-/* Ajuste o ícone para ficar bem visível no botão */
-#btnSendPrompt .bi-play-fill{
-    font-size: 1.8rem;
-    margin: 0;
-}
+ 
