@@ -8,7 +8,9 @@
     <!-- Fontes Letras -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- FAVICON -->
@@ -28,16 +30,20 @@
         <form action="/login" method="post" class="login-form">
             <!-- Email -->
             <label for="email">Email</label>
-            <input type="email" id="receber-email" class="input-dados" name="email" placeholder="@p4ed.com ou @sistemapoliedro.com.br" required>
+            <input type="email" id="receber-email" class="input-dados" name="email"
+                placeholder="@p4ed.com ou @sistemapoliedro.com.br" required>
             <!-- Senha -->
             <label for="senha">Senha</label>
             <input type="password" id="receber-senha" class="input-dados" name="senha" placeholder="Senha" required>
             <!-- Botão -->
-            <button type="submit" class="btn-entrar">Entrar</button>
+            <button type="submit" class="btn-entrar" id="btn-login">Entrar</button>
         </form>
-        
+
         <a href="EsqueceuSenha.html" id="link-esqueceu-senha">Esqueceu a senha?</a>
     </main>
     <a href="TelaCadastro.html" id="link-cadastro">Cadastre-se</a>
+    
+    <script src="cadastro-login.js"></script>
 </body>
+
 </html>
