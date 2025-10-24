@@ -10,7 +10,7 @@
         <!-- Imagens -->
         <link rel="stylesheet" href="style.css">
         <!-- FAVICON -->
-        <link rel="icon" href="./imagens/LOGOEDUCAIAA.svg" type="image/svg+xml">
+        <link rel="icon" href="../imagens/LOGOEDUCAIAA.svg" type="image/svg+xml">
         <!-- BOOTSTRAP -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -20,12 +20,21 @@
         >
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     </head>
-    <body class="layout-principal">
+    <body class="layout-principal m-0 p-0 vh-100">
+        <!-- BOTÂO USUÀRIO -->
+        <button id="btnUsuario" class="btn btn-outline-dark btn-lg position-fixed top-0 end-0 m-3" title="Minha Conta">
+            <i class="bi bi-person-circle fs-3"></i>
+        </button>
         <div class="d-flex w-100 vh-100 justify-content-start">
             <!-- BOTAO MENU -->
             <!-- Opções para gerar a imagem -->
-            <aside id="sidebar" class="bg-cinza-custom minimized">
-                <button id="btnToggleSidebar" class="btn btn-gray p-2" style="position: absolute; top: 1rem; left: 1rem; z-index: 1050; " title="Menu">
+            <aside id="sidebar" class="bg-cinza-custom top-0 vh-100 start-0 d-flex flex-column align-items-stretch minimized">
+                <button
+                    id="btnToggleSidebar"
+                    class="btn btn-gray p-2"
+                    style="position: absolute; top: 1rem; left: 1rem; z-index: 1050; "
+                    title="Menu"
+                >
                     <i class="bi bi-list fs-4"></i>
                 </button>
                 <nav class="menu-content-wrapper pt-5">
@@ -147,7 +156,6 @@
                     </ul>
                     <!-- DETALHES ADICIONAIS -->
                     <p class="sidebar-p fw-bold text-uppercase m-0 py-2 small text-white mb-3">Escreva uma mudança desejada após a geração</p>
-
                     <ul class="list-unstyled menu-principal mb-4">
                         <li class="menu-item cor-detalhes">
                             <a
@@ -205,33 +213,36 @@
                     </div>
                 </nav>
             </aside>
-            
             <!-- Caixa de conversa com a IA -->
-            
-            <main class="ms-auto" id="main-content">
-                    
-                    <div id="generation-area" class="card shadow-lg">
-                        <div id="image-container" class="image-placeholder">
-                            <p>O resultado da geração da imagem aparecerá aqui. Use o menu lateral para as escolhas da geração.</p>
-                        </div>
-                        <div id="prompt-bar" class="input-group p-3 border-top">
-                            <input
-                                type="text"
-                                id="prompt-input"
-                                class="form-control form-control-lg border-0 bg-light"
-                                placeholder="Digite aqui..."
-                                aria-label="Prompt de Texto para Edição"
-                            >
-                            <button
-                                class="btn btn-primary"
-                                type="button"
-                                id="btn-Send-Prompt"
-                                title="Enviar"
-                            >
-                                <i class="bi bi-play-fill fs-4"></i>
-                            </button>
-                        </div>
+            <main class="main-content d-flex justify-content-center align-items-center mx-auto position-relative">
+                <button id="btnDownloadImage" class="btn btn-outline-success btn-sm position-absolute"style="top: 1rem; right: 1rem; z-index: 5;" title="Baixar Imagem">
+                    <i class="bi bi-download fs-5"></i>
+                </button>
+                <button id="btnDeleteImage" class="btn btn-outline-danger btn-sm position-absolute"style="bottom: 1rem; left: 1rem; z-index: 5; title="Deletar Imagem">
+                    <i class="bi bi-trash-fill fs-5"></i>
+                </button>
+                <div id="generation-area" class="card shadow-lg bg-white d-flex flex-column overflow-hidden w-100">
+                    <div id="image-container" class="image-placeholder">
+                        <p>O resultado da geração da imagem aparecerá aqui. Use o menu lateral para as escolhas da geração.</p>
                     </div>
+                    <div id="prompt-bar" class="input-group p-3 border-top">
+                        <input
+                            type="text"
+                            id="prompt-input"
+                            class="form-control form-control-lg border-0 bg-light"
+                            placeholder="Digite aqui..."
+                            aria-label="Prompt de Texto para Edição"
+                        >
+                        <button
+                            class="btn btn-primary"
+                            type="button"
+                            id="btn-Send-Prompt"
+                            title="Enviar"
+                        >
+                            <i class="bi bi-play-fill fs-4"></i>
+                        </button>
+                    </div>
+                </div>
             </main>
         </div>
         <script src="script.js"></script>

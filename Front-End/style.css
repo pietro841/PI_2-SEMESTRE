@@ -1,5 +1,5 @@
 /* página login */
-body{
+body {
     height: 100%;
     min-height: 100vh;
     background: #D9D9D9;
@@ -7,17 +7,18 @@ body{
     margin: 0;
     font-family: Inter;
 }
-.layout-entrada{
+
+.layout-entrada {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.tela-login{
+.tela-login {
     width: 90%;
     max-width: 650px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
     border-radius: 25px;
     background: #FFF;
     display: flex;
@@ -25,9 +26,10 @@ body{
     align-items: stretch;
     padding: 0% 40px;
     margin: 0 auto;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
-.tela-login h1{    
+
+.tela-login h1 {
     color: #000000;
     text-align: center;
     font-size: 40px;
@@ -35,23 +37,26 @@ body{
     font-weight: 900;
     line-height: normal;
 }
-.login-form{
+
+.login-form {
     width: 100%;
     display: flex;
     align-items: stretch;
     flex-direction: column;
     gap: 0.2rem;
     margin-bottom: 1rem;
-    flex-grow: 1; 
+    flex-grow: 1;
     flex-shrink: 0;
     flex-basis: auto;
 }
-.login-form label{
+
+.login-form label {
     width: 100%;
     margin-left: 10px;
     margin-bottom: 1px;
 }
-.input-dados{
+
+.input-dados {
     width: 100%;
     border-radius: 30px;
     background: rgba(153, 153, 153, 0.60);
@@ -59,12 +64,14 @@ body{
     margin-bottom: 40px;
     box-sizing: border-box;
     padding: 8px 15px;
-    
+
 }
-.input-dados::placeholder{
-    color: rgb(105, 105, 105) 
+
+.input-dados::placeholder {
+    color: rgb(105, 105, 105)
 }
-.btn-entrar{
+
+.btn-entrar {
     width: 70%;
     border-radius: 70px;
     background: #D9D9D9;
@@ -79,13 +86,16 @@ body{
     margin-right: auto;
     margin-top: 30px;
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-     
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
 }
-.btn-entrar:hover{
-    background-color: gray;     /*Cor quando passar o mouse encima*/
+
+.btn-entrar:hover {
+    background-color: gray;
+    /*Cor quando passar o mouse encima*/
 }
-#link-esqueceu-senha{
+
+#link-esqueceu-senha {
     margin-top: 20px;
     display: inline-block;
     font-family: Inter;
@@ -98,10 +108,12 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
-#link-esqueceu-senha:hover{
-    text-decoration:underline;
+
+#link-esqueceu-senha:hover {
+    text-decoration: underline;
 }
-#link-cadastro{
+
+#link-cadastro {
     margin-top: 30px;
     display: block;
     text-align: center;
@@ -112,29 +124,35 @@ body{
     font-style: italic;
     line-height: normal;
 }
-#link-cadastro:hover{
-    text-decoration:underline;
+
+#link-cadastro:hover {
+    text-decoration: underline;
 }
+
 /* Configs tela cadastro */
-.tela-cadastro{
+.tela-cadastro {
     min-height: 530px;
 }
-#cadastro-email{
-    margin-bottom: 35px;
-}
-#cadastro-senha{
-    margin-bottom: 35px;
-}
-#confirmar-senha{
+
+#cadastro-email {
     margin-bottom: 35px;
 }
 
-.btn-voltar-telaLog{
+#cadastro-senha {
+    margin-bottom: 35px;
+}
+
+#confirmar-senha {
+    margin-bottom: 35px;
+}
+
+.btn-voltar-telaLog {
     position: absolute;
     top: 10px;
-    left: 10px;  
+    left: 10px;
 }
-.topo-logo{
+
+.topo-logo {
     width: 100%;
     background-color: #848080;
     z-index: 1000;
@@ -144,55 +162,57 @@ body{
     height: 80px;
     display: flex;
     align-items: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
-#nome-logo{
+
+#nome-logo {
     display: flex;
     align-items: center;
 }
-.logo-icone{
+
+.logo-icone {
     display: block;
     width: 100px;
     height: auto;
-   
+
 }
-#nome-logo span{
+
+#nome-logo span {
     color: #D9D9D9;
     font-size: 35px;
     font-style: normal;
     font-weight: 900;
     line-height: normal;
     padding-left: 2px;
-    text-shadow: 
-    -2px -2px 0 black, /* Superior Esquerdo */
-     2px -2px 0 black, /* Superior Direito */
-    -2px 2px 0 black,  /* Inferior Esquerdo */
-     2px 2px 0 black;  /* Inferior Direito */
-     font-family: Inter;    
+    text-shadow:
+        -2px -2px 0 black,
+        /* Superior Esquerdo */
+        2px -2px 0 black,
+        /* Superior Direito */
+        -2px 2px 0 black,
+        /* Inferior Esquerdo */
+        2px 2px 0 black;
+    /* Inferior Direito */
+    font-family: Inter;
 }
+
 /* AQUI È A PAGINA PRINCIPAL */
+
 /*VALE PRO BODY DA PAGINA PRINCIPAL */
 
-.layout-principal { 
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background-color:#D9D9D9;
+.layout-principal {
+    background-color: #D9D9D9;
 }
+
 .bg-cinza-custom {
     background-color: #848080;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    position: fixed; 
-    top: 0;
-    left: 0;
-    height: 100vh;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: fixed;
     z-index: 1040;
-    transition: width 0.3s ease-in-out, padding 0.3s ease-in-out; 
-    display: flex !important;
-    flex-direction: column;
-    align-items: stretch;
-    overflow-x: hidden; 
+    transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
+    overflow-x: hidden;
 }
+
 /* Estilos .expanded, .minimized, .menu-content-wrapper (MANTIDOS) */
 .bg-cinza-custom.expanded {
     width: 24vw;
@@ -201,14 +221,16 @@ body{
     padding-bottom: 1rem;
     padding-top: 4.5rem;
 }
+
 .bg-cinza-custom.minimized {
-     width: 80px; 
+    width: 80px;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     padding-top: 4.5rem;
- }
-.bg-cinza-custom.minimized .menu-content-wrapper { 
-     max-height: 0;
+}
+
+.bg-cinza-custom.minimized .menu-content-wrapper {
+    max-height: 0;
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -217,154 +239,169 @@ body{
     visibility: hidden;
     /* Transição muito rápida para o conteúdo sumir antes da barra fechar */
     transition: opacity 0.1s ease-in-out, visibility 0.1s;
- }
-main.flex-grow-1 { flex-grow: 1; }
-@media (max-width: 768px) {  .bg-cinza-custom.expanded {
+}
+
+main.flex-grow-1 {
+    flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+    .bg-cinza-custom.expanded {
         /* Aumenta a largura para 80% da tela no mobile */
         width: 87vw;
+    }
+    .bg-cinza-custom.minimized {
+        width: 20px; /* Ou qualquer valor pequeno que você queira */
+    }
+    #btnToggleSidebar{
+        top:0; 
+        left: 0;
+        padding: 0;
+        margin: -25px;
+        margin-top: 5px;
+    }
 }
-}
+
 /* CONFIG COLLAPSE  */
 .collapse:not(.show) {
-  display: none;
+    display: none;
 }
 
 .collapsing {
-  height: 0;
-  overflow: hidden;
-  transition: height 0.35s ease; /* ESTA É A LINHA CRÍTICA */
-}
-.sidebar-title {
-    /* ... (Estilos de padding, margin, etc.) ... */
-    
-    /* ESSENCIAL para a transição: */
-    height: auto; 
-    opacity: 1; 
-    
-    /* Define a transição suave para as propriedades que mudam */
-    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out; 
-}
-/* 1. Torna o Footer o ponto de referência (Já feito, mas bom revisar) */
-.sidebar-footer {
-    /* ... estilos existentes ... */
-    position: relative; 
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease;
 }
 
-/* 2. Posiciona e Estiliza o Toast (NOVAS REGRAS) */
+.sidebar-title {
+    /* ... (Estilos de padding, margin, etc.) ... */
+
+    /* ESSENCIAL para a transição: */
+    height: auto;
+    opacity: 1;
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+/* 1. Torna o Footer o ponto de referência  */
+.sidebar-footer {
+   
+    position: relative;
+}
+
+/* 2. Posiciona e Estiliza o Toast  */
 .custom-toast-position {
-    position: absolute; 
-    top: 100%; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    margin-top: 10px; 
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -18px;
     z-index: 1040;
-    
-    /* NOVO: Controla o tamanho máximo para não preencher a sidebar */
-    max-width: 90%; /* Ocupa no máximo 90% da largura do footer */
-    width: auto;     /* Permite que a largura se ajuste ao conteúdo, mas respeite o max-width */
-    
-    /* NOVO: Ajuste de padding/arredondamento (opcional, mas recomendado) */
+    max-width: 90%;
+    width: auto;
     padding: 8px 12px;
     border-radius: 6px;
 }
 
-/* 3. Estiliza o corpo do Toast para centralizar o texto (Se o texto for curto) */
+/* 3. Estiliza o corpo do Toast ) */
 .custom-toast-position .toast-body {
-    padding: 0; /* Remove o padding padrão do toast-body, se o custom-toast-position já tiver padding */
+    padding: 0; 
     line-height: 1.2;
-    /* Você já deve ter fw-bold e text-center no seu HTML, o que ajuda */
+    margin-top: 0;
 }
+
 
 /* 2. Posiciona e Estiliza o Toast (AJUSTE DE PROXIMIDADE) */
 
-/* Regra CRÍTICA: Como o elemento se comporta no modo minimizado */
 #sidebar.minimized .sidebar-title {
-    /* Zera a altura para que não ocupe espaço */
-    height: 0; 
+    height: 0;
     opacity: 0;
     padding-top: 0;
     padding-bottom: 0;
     margin-top: 0;
-    margin-bottom: 0; 
-    
-    /* Usar display: none pode causar um corte abrupto. Tente SÓ com height/opacity primeiro. */
+    margin-bottom: 0;
 }
+
 /* CONFIG <P> */
-.sidebar-p{
+.sidebar-p {
     white-space: nowrap;
-    overflow: hidden; 
-    opacity: 1; 
-    transition: opacity 0.3s ease-in-out;    
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
 }
 
 /* 1. ESTILO BASE DO MENU */
 
 .menu-principal {
-    padding: 0; 
-    margin: 0;  
+    padding: 0;
+    margin: 0;
     list-style: none;
-    width: 100%; 
+    width: 100%;
 }
-.list-unstyled{
+
+.list-unstyled {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* Base de link - Chave para o visual estreito (Substitui botões grandes) */
+
+/* Base de link  */
 .menu-link {
     justify-content: center;
-    display: flex; 
+    display: flex;
     align-items: center;
     text-decoration: none;
-    color: white; 
-    padding: 10px 15px; 
-    background-color: transparent; 
-    border: none ;
-    box-shadow: none ;
+    color: white;
+    padding: 10px 15px;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
     border-radius: 0;
     width: 100%;
     transition: background-color 0.15s;
 }
+
 /* SETA  */
 .menu-chevron {
     /* Adiciona uma transição suave para a rotação */
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
 }
+
 /* ANIMAÇÂO SETA */
 .menu-link:not(.collapsed) .menu-chevron {
     /* Rotação de 180 graus (aponta para cima) */
     transform: rotate(180deg);
 }
+
 .menu-link:hover {
-    background-color: rgba(255, 255, 255, 0.1) ; 
+    background-color: rgba(255, 255, 255, 0.1);
     color: white;
 }
 
 
-/* ================================================= */
-/* 2. ESTADOS ATIVOS (CORES SIMPLES COM AS CLASSES DO HTML) */
-/* ================================================= */
+
+/* 2. ESTADOS ATIVOS  */
+
 
 /* MATÉRIAS  */
-.cor-materia .menu-link:not(.collapsed), 
+.cor-materia .menu-link:not(.collapsed),
 .cor-materia .menu-link:focus {
-    background-color: #007f91 !important;
+    background-color: #007f91;
     font-weight: bold;
 }
 
 /* ESTILOS  */
-.cor-estilo .menu-link:not(.collapsed), 
+.cor-estilo .menu-link:not(.collapsed),
 .cor-estilo .menu-link:focus {
-    background-color: #C80031 !important;
+    background-color: #C80031;
     font-weight: bold;
 }
 
 /* DETALHES  */
-.cor-detalhes .menu-link:not(.collapsed), 
+.cor-detalhes .menu-link:not(.collapsed),
 .cor-detalhes .menu-link:focus {
-    background-color: #D6690A !important;
+    background-color: #D6690A;
     font-weight: bold;
 }
 
-/* 3. SUB-ITENS (FÍSICA, MECÂNICA) - RECÚO E COMPACIDADE */
+/* 3. SUB-ITENS (FÍSICA, MECÂNICA) */
 
 /* Física, Química */
 .sub-menu-toggle {
@@ -372,7 +409,7 @@ main.flex-grow-1 { flex-grow: 1; }
     text-decoration: none;
     color: white;
     font-weight: bold;
-    padding: 10px 15px 10px 25px; 
+    padding: 10px 15px 10px 25px;
     background-color: transparent;
     transition: background-color 0.15s;
     width: 100%;
@@ -382,131 +419,127 @@ main.flex-grow-1 { flex-grow: 1; }
 .sub-menu-toggle:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+
 /* ANIMAÇÂO SETA */
 .sub-menu-toggle:not(.collapsed) .menu-chevron {
     transform: rotate(180deg);
 }
+
 /* Nível 3: Mecânica, Óptica e Labels de Estilo */
 .sub-menu-link {
-    display: block; 
+    display: block;
     text-decoration: none;
-    color: #DDDDDD; 
-    cursor: pointer; 
-    padding: 8px 15px 8px 40px; 
+    color: #DDDDDD;
+    cursor: pointer;
+    padding: 8px 15px 8px 40px;
     font-size: 0.95rem;
     transition: background-color 0.1s;
     width: 100%;
 }
+
 .sub-menu-link:hover {
     background-color: rgba(255, 255, 255, 0.1) !important;
     color: white;
 }
 
 /* Estilo de seleção para os Radios Escondidos */
-.area-de-opcoes-compacta input[type="radio"]:checked + label {
-    background-color: #D6D6D6 !important; 
-    color: #444 !important;
+.area-de-opcoes-compacta input[type="radio"]:checked+label {
+    background-color: #D6D6D6;
+    color: #444;
     font-weight: bold;
 }
+
 /* CHECKED ICONE */
 .selected-icon {
-    opacity: 0;        /* Torna o ícone invisível por padrão */
-    transition: opacity 0.2s; /* Transição suave */
-    color: #11ff19;    /* Cor verde para indicar sucesso/seleção */
+    opacity: 0;
+    transition: opacity 0.2s;
+    color: #11ff19;
     font-size: 1.1rem;
 }
+
 .sub-menu-link.active-selection .selected-icon {
     opacity: 1;
 }
+
 /* Configuração do TEXTAREA de Edição */
-#detalhes-colapso .area-de-edicao { padding: 15px; }
-#detalhes-colapso textarea.form-control{
-    resize: none; 
-    box-sizing: border-box; 
-    border-radius: 0.5rem; 
+#detalhes-colapso .area-de-edicao {
+    padding: 15px;
 }
+
+#detalhes-colapso textarea.form-control {
+    resize: none;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+}
+
 /* BOTAO DE CANCELAR */
 .sidebar-footer {
-    padding: 15px; /* Espaçamento interno */
-    /* Garante que o botão sempre apareça no modo expandido */
+    padding: 15px;
 }
+
 /* Esconder o botão no modo minimizado */
 #sidebar.minimized .sidebar-footer {
     display: none;
 }
 
-
 /* AREA DA MAIN */
-#main-content {
+
+.main-content{
     min-height: 100vh;
     padding: 20px;
-    display: flex;
-    justify-content: center; /* Centraliza o wrapper */
-    align-items: center;
-    
-}
-/* AREA DE GERAÇÂO */
-#generation-area{
-    background-color: white; 
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column; 
-    overflow: hidden;
-    width: 100%;
-    max-width: 900px; 
-    height: 75vh;     
-    min-width: 300px; 
-    min-height: 400px;
-    display: flex;
-    flex-direction: column; 
-    overflow: hidden;
+
 }
 
-#image-container {
-    flex-grow: 1; /* Ocupa todo o espaço vertical restante */
-    padding: 30px; /* Espaçamento interno */
+/* AREA DE GERAÇÂO */
+#generation-area{
+    border-radius: 12px;
+    max-width: 900px;
+    height: 75vh;
+    min-width: 300px;
+    min-height: 400px;
+}
+
+#image-container{
+    flex-grow: 1;
+    /* Ocupa todo o espaço vertical restante */
+    padding: 30px;
+    /* Espaçamento interno */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    
-    /* Placeholder Style */
-    background-color: #f8f9fa; /* Fundo cinza claro dentro da caixa branca */
+    background-color: #f8f9fa;
     color: #6c757d;
     font-size: 1.1rem;
 }
 
 /* Barra de Comando (Input Group) */
 #prompt-bar {
-    /* Garante que a barra não encolha e fique na base */
-    flex-shrink: 0; 
-    background-color: white; 
-    padding: 15px 20px !important; /* Ajuste o padding se necessário */
+    flex-shrink: 0;
+    background-color: white;
+    padding: 15px 20px;
+   
 }
 
-/* Campo de Input ("Digite aqui...") */
+/* Campo de Input */
 #prompt-input {
-    /* Remove a sombra de foco padrão se for muito agressiva */
-    box-shadow: none !important; 
-    /* Garante que o input fique um pouco mais alto */
+    box-shadow: none;
     height: 55px;
 }
 
 /* Botão de Envio */
-#btnSendPrompt{
-   
-    border-radius: 0 12px 12px 0 !important;
-    padding: 0.5rem 1.25rem; 
-    height: 55px; /* Altura igual ao input */
-    
-    
+#btnSendPrompt {
+
+    border-radius: 0 12px 12px 0;
+    padding: 0.5rem 1.25rem;
+    height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 /* Ajuste o ícone para ficar bem visível no botão */
-#btnSendPrompt .bi-play-fill {
+#btnSendPrompt .bi-play-fill{
     font-size: 1.8rem;
     margin: 0;
 }
