@@ -1,0 +1,545 @@
+/* página login */
+body {
+    height: 100%;
+    min-height: 100vh;
+    background: #D9D9D9;
+    padding: 0;
+    margin: 0;
+    font-family: Inter;
+}
+
+.layout-entrada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tela-login {
+    width: 90%;
+    max-width: 650px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0% 40px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tela-login h1 {
+    color: #000000;
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+
+.login-form label {
+    width: 100%;
+    margin-left: 10px;
+    margin-bottom: 1px;
+}
+
+.input-dados {
+    width: 100%;
+    border-radius: 30px;
+    background: rgba(153, 153, 153, 0.60);
+    border: none;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+    padding: 8px 15px;
+
+}
+
+.input-dados::placeholder {
+    color: rgb(105, 105, 105)
+}
+
+.btn-entrar {
+    width: 70%;
+    border-radius: 70px;
+    background: #D9D9D9;
+    border: none;
+    color: #000;
+    font-family: Inter;
+    font-size: 2em;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+}
+
+.btn-entrar:hover {
+    background-color: gray;
+    /*Cor quando passar o mouse encima*/
+}
+
+#link-esqueceu-senha {
+    margin-top: 20px;
+    display: inline-block;
+    font-family: Inter;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-style: italic;
+    line-height: normal;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#link-esqueceu-senha:hover {
+    text-decoration: underline;
+}
+
+#link-cadastro {
+    margin-top: 30px;
+    display: block;
+    text-align: center;
+    font-family: Inter;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-style: italic;
+    line-height: normal;
+}
+
+#link-cadastro:hover {
+    text-decoration: underline;
+}
+
+/* Configs tela cadastro */
+.tela-cadastro {
+    min-height: 530px;
+}
+
+#cadastro-email {
+    margin-bottom: 35px;
+}
+
+#cadastro-senha {
+    margin-bottom: 35px;
+}
+
+#confirmar-senha {
+    margin-bottom: 35px;
+}
+
+.btn-voltar-telaLog {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.topo-logo {
+    width: 100%;
+    background-color: #848080;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+#nome-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icone {
+    display: block;
+    width: 100px;
+    height: auto;
+
+}
+
+#nome-logo span {
+    color: #D9D9D9;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    padding-left: 2px;
+    text-shadow:
+        -2px -2px 0 black,
+        /* Superior Esquerdo */
+        2px -2px 0 black,
+        /* Superior Direito */
+        -2px 2px 0 black,
+        /* Inferior Esquerdo */
+        2px 2px 0 black;
+    /* Inferior Direito */
+    font-family: Inter;
+}
+
+/* AQUI È A PAGINA PRINCIPAL */
+
+/*VALE PRO BODY DA PAGINA PRINCIPAL */
+
+.layout-principal {
+    background-color: #D9D9D9;
+}
+
+.bg-cinza-custom {
+    background-color: #848080;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    z-index: 1040;
+    transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
+    overflow-x: hidden;
+}
+
+/* Estilos .expanded, .minimized, .menu-content-wrapper (MANTIDOS) */
+.bg-cinza-custom.expanded {
+    width: 24vw;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 4.5rem;
+}
+
+.bg-cinza-custom.minimized {
+    width: 80px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 4.5rem;
+}
+
+.bg-cinza-custom.minimized .menu-content-wrapper {
+    max-height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    /* Oculta o conteúdo e o texto */
+    opacity: 0;
+    visibility: hidden;
+    /* Transição muito rápida para o conteúdo sumir antes da barra fechar */
+    transition: opacity 0.1s ease-in-out, visibility 0.1s;
+}
+
+main.flex-grow-1 {
+    flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+    .bg-cinza-custom.expanded {
+        /* Aumenta a largura para 80% da tela no mobile */
+        width: 87vw;
+    }
+    .bg-cinza-custom.minimized {
+        width: 20px; /* Ou qualquer valor pequeno que você queira */
+    }
+    #btnToggleSidebar{
+        top:0; 
+        left: 0;
+        padding: 0;
+        margin: -25px;
+        margin-top: 5px;
+    }
+}
+
+/* CONFIG COLLAPSE  */
+.collapse:not(.show) {
+    display: none;
+}
+
+.collapsing {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease;
+}
+
+.sidebar-title {
+    /* ... (Estilos de padding, margin, etc.) ... */
+
+    /* ESSENCIAL para a transição: */
+    height: auto;
+    opacity: 1;
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+/* 1. Torna o Footer o ponto de referência  */
+.sidebar-footer {
+   
+    position: relative;
+}
+
+/* 2. Posiciona e Estiliza o Toast  */
+.custom-toast-position {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -18px;
+    z-index: 1040;
+    max-width: 90%;
+    width: auto;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+/* 3. Estiliza o corpo do Toast ) */
+.custom-toast-position .toast-body {
+    padding: 0; 
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+
+/* 2. Posiciona e Estiliza o Toast (AJUSTE DE PROXIMIDADE) */
+
+#sidebar.minimized .sidebar-title {
+    height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* CONFIG <P> */
+.sidebar-p {
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* 1. ESTILO BASE DO MENU */
+
+.menu-principal {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+}
+
+.list-unstyled {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Base de link  */
+.menu-link {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+    transition: background-color 0.15s;
+}
+
+/* SETA  */
+.menu-chevron {
+    /* Adiciona uma transição suave para a rotação */
+    transition: transform 0.3s ease;
+}
+
+/* ANIMAÇÂO SETA */
+.menu-link:not(.collapsed) .menu-chevron {
+    /* Rotação de 180 graus (aponta para cima) */
+    transform: rotate(180deg);
+}
+
+.menu-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+
+
+/* 2. ESTADOS ATIVOS  */
+
+
+/* MATÉRIAS  */
+.cor-materia .menu-link:not(.collapsed),
+.cor-materia .menu-link:focus {
+    background-color: #007f91;
+    font-weight: bold;
+}
+
+/* ESTILOS  */
+.cor-estilo .menu-link:not(.collapsed),
+.cor-estilo .menu-link:focus {
+    background-color: #C80031;
+    font-weight: bold;
+}
+
+/* DETALHES  */
+.cor-detalhes .menu-link:not(.collapsed),
+.cor-detalhes .menu-link:focus {
+    background-color: #D6690A;
+    font-weight: bold;
+}
+
+/* 3. SUB-ITENS (FÍSICA, MECÂNICA) */
+
+/* Física, Química */
+.sub-menu-toggle {
+    display: flex;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px 10px 25px;
+    background-color: transparent;
+    transition: background-color 0.15s;
+    width: 100%;
+    border: none;
+}
+
+.sub-menu-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ANIMAÇÂO SETA */
+.sub-menu-toggle:not(.collapsed) .menu-chevron {
+    transform: rotate(180deg);
+}
+
+/* Nível 3: Mecânica, Óptica e Labels de Estilo */
+.sub-menu-link {
+    display: block;
+    text-decoration: none;
+    color: #DDDDDD;
+    cursor: pointer;
+    padding: 8px 15px 8px 40px;
+    font-size: 0.95rem;
+    transition: background-color 0.1s;
+    width: 100%;
+}
+
+.sub-menu-link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: white;
+}
+
+/* Estilo de seleção para os Radios Escondidos */
+.area-de-opcoes-compacta input[type="radio"]:checked+label {
+    background-color: #D6D6D6;
+    color: #444;
+    font-weight: bold;
+}
+
+/* CHECKED ICONE */
+.selected-icon {
+    opacity: 0;
+    transition: opacity 0.2s;
+    color: #11ff19;
+    font-size: 1.1rem;
+}
+
+.sub-menu-link.active-selection .selected-icon {
+    opacity: 1;
+}
+
+/* Configuração do TEXTAREA de Edição */
+#detalhes-colapso .area-de-edicao {
+    padding: 15px;
+}
+
+#detalhes-colapso textarea.form-control {
+    resize: none;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+}
+
+/* BOTAO DE CANCELAR */
+.sidebar-footer {
+    padding: 15px;
+}
+
+/* Esconder o botão no modo minimizado */
+#sidebar.minimized .sidebar-footer {
+    display: none;
+}
+
+/* AREA DA MAIN */
+
+.main-content{
+    min-height: 100vh;
+    padding: 20px;
+
+}
+
+/* AREA DE GERAÇÂO */
+#generation-area{
+    border-radius: 12px;
+    max-width: 900px;
+    height: 75vh;
+    min-width: 300px;
+    min-height: 400px;
+}
+
+#image-container{
+    flex-grow: 1;
+    /* Ocupa todo o espaço vertical restante */
+    padding: 30px;
+    /* Espaçamento interno */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+/* Barra de Comando (Input Group) */
+#prompt-bar {
+    flex-shrink: 0;
+    background-color: white;
+    padding: 15px 20px;
+   
+}
+
+/* Campo de Input */
+#prompt-input {
+    box-shadow: none;
+    height: 55px;
+}
+
+/* Botão de Envio */
+#btnSendPrompt {
+
+    border-radius: 0 12px 12px 0;
+    padding: 0.5rem 1.25rem;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ajuste o ícone para ficar bem visível no botão */
+#btnSendPrompt .bi-play-fill{
+    font-size: 1.8rem;
+    margin: 0;
+}
