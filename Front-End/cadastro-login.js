@@ -21,22 +21,22 @@ const handleRegister = async (event) => {
     };
 
     try {
-        // Envia a requisição POST para a rota de cadastro no seu backend
+        // Envia a requisição POST para a rota de cadastro no  backend
         const response = await fetch(`${BACKEND_URL}/register`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json', // Diz ao backend que estamos enviando JSON
+                'Content-Type': 'application/json', 
             },
-            body: JSON.stringify(data), // Converte o objeto JavaScript em string JSON
+            body: JSON.stringify(data), 
         });
 
-        const result = await response.json(); // Pega a resposta JSON do backend (msg, etc.)
+        const result = await response.json(); 
 
         if (response.ok) { // Status 201 (Sucesso)
             alert(`✅ Cadastro OK: ${result.msg}. Agora faça o login!`);
             // Opcional: Limpar formulário ou redirecionar
         } else { // Status 400 ou 500 (Erro)
-            // Exibe a mensagem de erro vinda do seu backend (ex: "Email já cadastrado")
+            
             alert(`❌ Erro no Cadastro: ${result.msg}`);
         }
 
@@ -45,18 +45,51 @@ const handleRegister = async (event) => {
         alert('❌ Erro de Conexão: Verifique se o backend está rodando em http://localhost:3000.');
         console.error("Erro de Rede:", error);
     }
-};
+    // ... dentro da função handleRegister
+    if (response.ok) { // Status 201 (Sucesso no Cadastro)
+        alert(`✅ Cadastro OK: ${result.msg}. Agora faça o login!`);
 
+        // 🚨 REDIRECIONA para a Tela de LOGIN
+        window.location.href = 'TelaLogin.html';
+
+    } else { // Status 400 ou 500 (Erro)
+        // ...
+
+    };
+}
 
 // 2. A FUNÇÃO DE LÓGICA DE LOGIN (handleLogin) - Deixamos vazia por enquanto
 
+// ... implementação COMPLETA da função handleLogin
+
 const handleLogin = async (event) => {
     event.preventDefault();
-    alert("Função de Login será implementada em breve!");
-    // O código de login virá aqui.
+
+    // ... código para capturar email/senha, criar o objeto 'data' ...
+
+    try {
+        const response = await fetch(`${BACKEND_URL}/login`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) { // Sucesso no Login (Status 200, 202, etc.)
+            alert(`Login bem-sucedido! Bem-vindo(a)!`);
+
+            // 🚨 REDIRECIONA para a Página Principal
+            window.location.href = 'PaginaPrincipal.html';
+
+        } else { // Erro no Login
+            alert(`❌ Email ou senha inválidos: ${result.msg}`);
+        }
+
+    } catch (error) {
+        // ...
+    }
 };
-
-
 
 // 3. O CÓDIGO DE CONEXÃO DO BOTÃO
 
