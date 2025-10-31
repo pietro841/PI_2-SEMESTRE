@@ -1,6 +1,5 @@
-// server.js
 
-// Importa as bibliotecas que instalamos
+// Importa as bibliotecas 
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -8,7 +7,13 @@ const authRoutes = require('./routes/auth');
 
 // --- 1. STRING DE CONEXÃO DO MONGODB---
 
-const MONGODB_URI = 'mongodb+srv://usuario1:42414623837@cluster0.s8tnirk.mongodb.net/?appName=Cluster0';
+const MONGODB_URI = process.env.MONGO_URI;
+
+// Configuração Aviso
+if (!MONGODB_URI) {
+    console.error("ERRO: Variável de ambiente MONGO_URI não definida. Por favor, defina-a antes de iniciar o servidor.");
+    process.exit(1); 
+}
 
 // --- 2. CONFIGURAÇÃO BÁSICA DO EXPRESS ---
 const app = express();
@@ -21,7 +26,7 @@ app.use(express.json());
 app.use('/api', authRoutes);
 // Rota de teste simples (se você acessar http://localhost:3000)
 app.get('/', (req, res) => {
-    res.send('Servidor rodando! Base pronta para Login e Cadastro.');
+    res.send('Servidor rodando!');
 });
 
 
@@ -30,14 +35,14 @@ app.get('/', (req, res) => {
 // Tenta conectar ao MongoDB usando a URI
 mongoose.connect(MONGODB_URI)
     .then(() => {
-        console.log('✅ Conectado ao MongoDB com sucesso!');
+        console.log('Conectado ao MongoDB com sucesso!');
 
         // Se a conexão com o DB funcionar, inicia o servidor Express
         app.listen(PORT, () => {
-            console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
-            console.log('Agora vamos criar o modelo e as rotas de usuário...');
+            console.log(`Servidor rodando em http://localhost:${PORT}`);
+            
         });
     })
     .catch((error) => {
-        console.error('❌ Erro na conexão com o MongoDB. Verifique sua URI e acesso à rede!', error.message);
+        console.error(error.message);
     });

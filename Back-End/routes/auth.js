@@ -19,8 +19,6 @@ const isDomainAllowed = (email) => {
     }
     return false;
 };
-// ----------------------------------------------
-
 
 // --- CHAVE SECRETA (Guardar isso no .env em projetos reais) ---
 const JWT_SECRET = 'pi_educaIA_chavesecreta';
