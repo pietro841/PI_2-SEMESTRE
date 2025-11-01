@@ -21,7 +21,9 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     </head>
     <body class="layout-principal m-0 p-0 vh-100">
+
         <!-- BOTÂO USUÀRIO -->
+      
         <button id="btnUsuario" class="btn btn-outline-dark btn-lg position-fixed top-0 end-0 m-3" title="Minha Conta">
             <i class="bi bi-person-circle fs-3"></i>
         </button>
@@ -214,12 +216,14 @@
                 </nav>
             </aside>
             <!-- Caixa de conversa com a IA -->
-             
+            <head>
+                
+            </head> 
             <main class="main-content d-flex justify-content-center align-items-center mx-auto position-relative">
-                <button id="btnDownloadImage" class="btn btn-outline-success position-absolute"style="top: 2rem; right: 15rem; z-index: 5;" title="Baixar Imagem">
+                <button id="btnDownloadImage" class="btn btn-outline-success position-absolute "style="top: 30rem; left: 45rem; z-index: 5;" title="Baixar Imagem">
                     <i class="bi bi-download fs-5"></i>
                 </button>
-                <button id="btnDeleteImage" class="btn btn-outline-danger position-absolute"style="top: 2rem; left: 15rem; z-index: 5;" title="Deletar Imagem">
+                <button id="btnDeleteImage" class="btn btn-outline-danger position-absolute top: 20rem; left: 44rem; z-index: 5;" title="Deletar Imagem">
                     <i class="bi bi-trash-fill fs-5"></i>
                 </button>
                 <div id="generation-area" class="card shadow-lg bg-white d-flex flex-column overflow-hidden w-100">
@@ -250,3 +254,16 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     </body>
 </html>
+
+<aside id="sidebarUsuario" class="sidebar-user">
+    <nav>
+        <ul class="list-unstyled">
+            <li><a href="#"><i class="bi bi-person me-2"></i> Perfil</a></li>
+            <li><a href="#"><i class="bi bi-gear me-2"></i> Configurações</a></li>
+            <hr class="dropdown-divider">
+            <li><a href="#"><i class="bi bi-question-circle me-2"></i> Ajuda</a></li>
+            <li><a href="#"><i class="bi bi-box-arrow-right me-2"></i> Sair</a></li>
+        </ul>
+    </nav>
+    <button id="btnCloseUser" class="close-btn-user" aria-label="Fechar Menu do Usuário">X</button>
+</aside>

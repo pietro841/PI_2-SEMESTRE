@@ -551,5 +551,102 @@ main.flex-grow-1 {
     align-items: center;
     justify-content: center;
 }
-
  
+/* --- Estilos para a Sidebar de Usuário (sidebar-user) --- */
+
+/* Esta sidebar será um 'popup' no canto superior direito */
+.sidebar-user {
+    width: 280px; 
+    height: auto; 
+    max-height: 80vh; 
+    position: fixed; 
+    z-index: 1100; /* Mais alto que o botão do menu (1050) e qualquer modal */
+
+    /* Posicionamento (Ajuste 'top' para ficar logo abaixo do botão) */
+    top: 90px; /* Ajustado para 90px, pois seu botão tem m-3 */
+    right: 1rem; /* Alinhado com a margem direita do botão */
+
+    /* Estilos Visuais */
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Sombra um pouco mais forte */
+    border-radius: 8px;
+    padding: 10px 0;
+    
+    /* Estado Inicial: Escondida e animada */
+    opacity: 0; 
+    visibility: hidden; 
+    transform: translateY(-20px) scale(0.95); /* Começa um pouco acima e menor */
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0.2s; 
+}
+
+/* Classe de Abertura ÚNICA (open-user) */
+.sidebar-user.open-user { 
+    opacity: 1; 
+    visibility: visible; 
+    transform: translateY(0) scale(1); /* Posição e tamanho normal */
+}
+
+/* Estilos dos links internos (usando as cores do Bootstrap como referência) */
+.sidebar-user nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-user a {
+    display: flex; /* Para alinhar ícone e texto */
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.sidebar-user a:hover {
+    background-color: #f0f0f0;
+    color: #0d6efd; /* Cor primária do Bootstrap no hover */
+}
+
+/* Esconder o botão de fechar no desktop */
+.close-btn-user {
+    display: none; 
+}
+
+/* --- Responsividade (Para Mobile) --- */
+@media screen and (max-width: 600px) {
+    .sidebar-user {
+        /* Ocupa a tela inteira para melhor UX em mobile */
+        width: 100%;
+        height: 100%;
+        max-height: none;
+        top: 0;
+        right: 0;
+        border-radius: 0;
+        box-shadow: none;
+        
+        /* Desliza da direita para a esquerda (como um menu de gaveta) */
+        transform: translateX(100%); 
+        opacity: 1; /* Remove a opacidade para garantir que o deslize seja visível */
+        visibility: visible;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .sidebar-user.open-user {
+        transform: translateX(0); /* Entra na tela */
+    }
+    
+    /* Mostrar o botão de fechar em telas pequenas */
+    .close-btn-user {
+        display: block; 
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+        color: #333;
+        z-index: 1101; /* Garante que fique acima de tudo */
+    }
+}
