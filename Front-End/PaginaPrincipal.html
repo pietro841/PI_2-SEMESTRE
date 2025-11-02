@@ -223,7 +223,7 @@
                 <button id="btnDownloadImage" class="btn btn-outline-success position-absolute "style="top: 30rem; left: 45rem; z-index: 5;" title="Baixar Imagem">
                     <i class="bi bi-download fs-5"></i>
                 </button>
-                <button id="btnDeleteImage" class="btn btn-outline-danger position-absolute top: 20rem; left: 44rem; z-index: 5;" title="Deletar Imagem">
+                <button id="btnDeleteImage" class="btn btn-outline-danger position-absolute "style="top: 20rem; left: 44rem; z-index: 5;" title="Deletar Imagem">
                     <i class="bi bi-trash-fill fs-5"></i>
                 </button>
                 <div id="generation-area" class="card shadow-lg bg-white d-flex flex-column overflow-hidden w-100">
@@ -256,14 +256,33 @@
 </html>
 
 <aside id="sidebarUsuario" class="sidebar-user">
+
+    <div class="user-profile-header d-flex align-items-center justify-content-between">
+        
+        <div class="d-flex align-items-center">
+            <div class="avatar-circle me-3"> 
+                <i class="bi bi-person-circle fs-2"></i> 
+            </div>
+            <div class="text-start"> 
+                <p class="user-name mb-0">Felipaao</p>
+                <p class="user-email mb-0">seuemail@gmail.com</p> </div>
+        </div>
+        
+        <button id="btnCloseUser" class="close-btn-user">X</button> 
+    </div>
+    <hr class="header-divider"> 
+    
     <nav>
         <ul class="list-unstyled">
-            <li><a href="#"><i class="bi bi-person me-2"></i> Perfil</a></li>
-            <li><a href="#"><i class="bi bi-gear me-2"></i> Configurações</a></li>
+            <li><a href="#"><i class="bi bi-bell me-2"></i> Notificações</a></li>
+            <li><a href="#"><i class="bi bi-clock-history me-2"></i> Histórico</a></li>
             <hr class="dropdown-divider">
-            <li><a href="#"><i class="bi bi-question-circle me-2"></i> Ajuda</a></li>
             <li><a href="#"><i class="bi bi-box-arrow-right me-2"></i> Sair</a></li>
         </ul>
     </nav>
-    <button id="btnCloseUser" class="close-btn-user" aria-label="Fechar Menu do Usuário">X</button>
+    
+    <a href="#" class="base-action-link">
+        Mudar Senha
+        <i class="bi bi-arrow-right-short ms-auto"></i> 
+    </a>
 </aside>

@@ -292,3 +292,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+// ... dentro do document.addEventListener('DOMContentLoaded', ...)
+
+const sidebarMaterias = document.getElementById('sidebar'); // ID da sua sidebar de matérias
+const OPEN_CLASS = 'open-user'; // Classe da sua sidebar de usuário
+
+function toggleSidebarUsuario() {
+    if (sidebarUsuario) {
+        sidebarUsuario.classList.toggle(OPEN_CLASS);
+        
+        // CORREÇÃO CRÍTICA: Se a sidebar do usuário abrir, feche a sidebar de matérias
+        if (sidebarUsuario.classList.contains(OPEN_CLASS) && sidebarMaterias) {
+            // Remova todas as classes que mantêm sua sidebar de matérias aberta
+            sidebarMaterias.classList.remove('open', 'expanded', 'minimized'); 
+            // Se sua sidebar de matérias usa a classe 'minimized' para estar fechada, o código acima é o contrário do que você precisa.
+            
+            // VERIFIQUE: Qual classe sua sidebar de matérias usa para estar FECHADA?
+            // Se 'minimized' é o estado FECHADO, você deve garantir que ela tenha essa classe:
+            sidebarMaterias.classList.add('minimized'); 
+        }
+    }
+}
+
+// ... e vice-versa no botão da sidebar de matérias:
+const btnToggleSidebarMaterias = document.getElementById('btnToggleSidebar');
+
+if (btnToggleSidebarMaterias) {
+    btnToggleSidebarMaterias.addEventListener('click', () => {
+         // Fecha a sidebar de usuário quando o botão de matérias for clicado
+         if (sidebarUsuario && sidebarUsuario.classList.contains(OPEN_CLASS)) {
+             toggleSidebarUsuario(); // Chama a função que fecha a sidebar de usuário
+         }
+    });
+}
+
+// ...
