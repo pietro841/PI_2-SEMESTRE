@@ -239,12 +239,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 10. ESTADO INICIAL
 
+    // ... linhas anteriores ...
+
+    // 10. ESTADO INICIAL
+
     if (sidebar) {
-        sidebar.classList.remove('expanded');
-        sidebar.classList.add('minimized');
-        closeAllCollapses();
+        // REMOVA AS TRÊS LINHAS ABAIXO!
+        // sidebar.classList.remove('expanded');
+        // sidebar.classList.add('minimized');
+        // closeAllCollapses(); 
     }
-});
+}); 
+// ... restante do seu código ...
+    
 
 // Garante que o código só é executado após o HTML carregar
 document.addEventListener('DOMContentLoaded', () => {

@@ -557,15 +557,15 @@ main.flex-grow-1 {
 /* Esta sidebar será um 'popup' no canto superior direito */
 .sidebar-user {
     /* AJUSTE 1: Aumento da largura para 320px */
-    width: 320px; 
+    width: 280px; 
     height: auto; 
     max-height: 80vh; 
     position: fixed; 
     z-index: 1100;
 
     /* AJUSTE 2: Posição TOP ajustada para 130px (para encaixar o botão com a 'fita cinza') */
-    top: 130px; 
-    right: 1rem; 
+    top: 100px; 
+    right: 1%; 
 
     /* Estilos Visuais */
     background-color: #ffffff;
@@ -719,4 +719,59 @@ main.flex-grow-1 {
 
 .base-action-link i {
     font-size: 20px;
+}
+ 
+/* --- AJUSTES DE POSICIONAMENTO PARA ÍCONES FIXOS NO MOBILE (Telas <= 600px) --- */
+@media screen and (max-width: 600px) {
+    
+    /* === 1. Botão da Lixeira (#btnDeleteImage) === */
+    #btnDeleteImage {
+        /* Sobrescreve as propriedades 'top' e 'left' do desktop */
+        top: auto !important; 
+        left: auto !important; 
+        
+        /* Nova Posição: Canto Inferior Esquerdo */
+        bottom: 90px; /* 80px acima do botão de download */
+        left: 15px; /* 15px de margem da borda esquerda */
+        
+        /* Garante que o posicionamento seja relativo ao viewport no mobile */
+        /* Se o 'position: absolute' não funcionar bem, mude para 'fixed' aqui, mas o absolute deve bastar se o main for o viewport. */
+        position: fixed; 
+        
+        /* Opcional: Garante que fique acima de tudo */
+        z-index: 990; 
+    }
+
+    /* === 2. Botão de Download (#btnDownloadImage) === */
+    #btnDownloadImage {
+        /* Sobrescreve as propriedades 'top' e 'left' do desktop */
+        top: auto !important; 
+        left: auto !important; 
+        
+        /* Nova Posição: Canto Inferior Esquerdo (mais abaixo) */
+        bottom: 15px; /* Fica a 15px da borda inferior */
+        left: 15px; 
+        
+        position: fixed;
+        z-index: 990;
+    }
+}
+/* 1. Sidebar de Matérias (#sidebar) */
+#sidebar {
+    /* Permite a transição para abrir/fechar */
+    transition: width 0.3s ease-in-out;
+    /* Garante que ela não encolha no flexbox */
+    flex-shrink: 0; 
+}
+
+/* 2. Largura no Estado Aberto (Essencial para abrir) */
+.bg-cinza-custom.expanded {
+    width: 26vw; /* Largura total da sidebar aberta (Seu valor CSS) */
+    /* ... outros paddings ... */
+}
+
+/* 3. Conteúdo Principal (Para se mover junto e não bugar) */
+#image-container {
+    flex-grow: 1; /* Garante que o conteúdo ocupe o espaço restante */
+    /* ... */
 }
