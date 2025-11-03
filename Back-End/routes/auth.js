@@ -21,7 +21,7 @@ const isDomainAllowed = (email) => {
 };
 
 // --- CHAVE SECRETA (Guardar isso no .env em projetos reais) ---
-const JWT_SECRET = 'pi_educaIA_chavesecreta';
+
 
 // =========================================================
 // Rota de Cadastro (Registro) (POST /api/register)
@@ -97,8 +97,8 @@ router.post('/login', async (req, res) => {
         // 4. Assina (cria) o token e define a expiração
         jwt.sign(
             payload,
-            JWT_SECRET,
-            { expiresIn: '1h' },
+            process.env.JWT_SECRET,
+            { expiresIn: process.env.JWT_EXPIRES_IN || '1h' },
             (err, token) => {
                 if (err) throw err;
 

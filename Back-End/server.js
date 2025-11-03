@@ -4,21 +4,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const authRoutes = require('./routes/auth');
-
+// Conexão .env
+require('dotenv').config();
 // --- 1. STRING DE CONEXÃO DO MONGODB---
 
 const MONGODB_URI = process.env.MONGO_URI;
 
-// Configuração Aviso
-if (!MONGODB_URI) {
-    console.error("ERRO: Variável de ambiente MONGO_URI não definida. Por favor, defina-a antes de iniciar o servidor.");
-    process.exit(1); 
-}
-
 // --- 2. CONFIGURAÇÃO BÁSICA DO EXPRESS ---
 const app = express();
 // Define a porta onde o servidor vai rodar
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.use(cors());
 // O Express precisa deste middleware para entender dados JSON enviados pelo Front-end
 app.use(express.json());
