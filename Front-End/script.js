@@ -3,29 +3,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 1. DEFINIÇÃO DAS VARIÁVEIS
 
-    const sidebar = document.getElementById('sidebar');
-    const toggleButton = document.getElementById('btnToggleSidebar');
-    const detalhesCollapse = document.getElementById('detalhes-colapso');
-    const comandoTextarea = document.getElementById('comando-edicao-textarea');
 
-    // Seletores unificados para links que acionam collapse
-    const allCollapseToggles = document.querySelectorAll('.menu-link[data-bs-toggle="collapse"], .sub-menu-toggle[data-bs-toggle="collapse"]');
+const sidebar = document.getElementById('sidebar');
+const toggleButton = document.getElementById('btnToggleSidebar');
+const detalhesCollapse = document.getElementById('detalhes-colapso');
+const comandoTextarea = document.getElementById('comando-edicao-textarea');
 
-    // Variáveis para a lógica de 'checked'
-    const subAreaLinks = document.querySelectorAll('#materias-colapso .sub-menu-link');
-    const estiloLabels = document.querySelectorAll('#estilos-colapso .sub-menu-link');
-    const estiloRadios = document.querySelectorAll('input[name="estilo_escolhido"]');
+// Seletores unificados para links que acionam collapse
+const allCollapseToggles = document.querySelectorAll('.menu-link[data-bs-toggle="collapse"], .sub-menu-toggle[data-bs-toggle="collapse"]');
 
-    // Variável para o botão de limpar
-    const btnLimpar = document.getElementById('btnLimparSelecoes');
+// Variáveis para a lógica de 'checked'
+const subAreaLinks = document.querySelectorAll('#materias-colapso .sub-menu-link');
+const estiloLabels = document.querySelectorAll('#estilos-colapso .sub-menu-link');
+const estiloRadios = document.querySelectorAll('input[name="estilo_escolhido"]');
 
-    // Variáveis para os dois Toasts
-    const toastSuccessElement = document.getElementById('toastSuccess');
-    const toastWarningElement = document.getElementById('toastWarning');
-    
-    let toastSuccessInstance = null;
-    let toastWarningInstance = null;
-    
+// Variável para o botão de limpar
+const btnLimpar = document.getElementById('btnLimparSelecoes');
+
+// >>> NOVAS VARIÁVEIS PARA LIXEIRA E DOWNLOAD <<<
+const btnDownloadImage = document.getElementById('btnDownloadImage');
+const btnDeleteImage = document.getElementById('btnDeleteImage');
+const imageContainer = document.getElementById('image-container'); // O contêiner da imagem/texto
+
+// Variáveis para os dois Toasts
+const toastSuccessElement = document.getElementById('toastSuccess');
+const toastWarningElement = document.getElementById('toastWarning');
+
+let toastSuccessInstance = null;
+let toastWarningInstance = null;
 
 
 
@@ -105,7 +110,66 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     }
+// ... (O código acima da clearAllSelections) ...
 
+// ----------------------------------------------------
+// 11. FUNÇÃO PARA EXCLUIR IMAGEM E RESETAR O CONTEÚDO (Lixeira)
+// ----------------------------------------------------
+
+function deleteImageAndReset() {
+    // 1. Limpa todas as seleções na sidebar
+    clearAllSelections(); 
+    
+    // 2. Reseta o conteúdo da caixa de imagem (image-container)
+    if (imageContainer) { 
+        // 2.1. Remove qualquer imagem gerada (apaga o que estiver lá)
+        const currentImage = imageContainer.querySelector('img');
+        if (currentImage) {
+             currentImage.remove();
+        }
+        
+        // 2.2. Restaura o HTML inicial da caixa branca
+        // (Baseado no seu HTML, o texto inicial)
+        imageContainer.innerHTML = `
+            <p>O resultado da geração da imagem aparecerá aqui. Use o menu lateral para as escolhas da geração.</p>
+        `;
+        
+        // *OPCIONAL*: Aqui você pode disparar um Toast de sucesso se desejar.
+    }
+}
+
+
+// ----------------------------------------------------
+// 12. FUNÇÃO PARA DOWNLOAD DA IMAGEM
+// ----------------------------------------------------
+
+function downloadImage() {
+    if (imageContainer) {
+        // Encontra a tag <img> que foi gerada dentro do image-container.
+        const imagem = imageContainer.querySelector('img');
+        
+        if (imagem && imagem.src) {
+            // Cria um link temporário para forçar o download
+            const link = document.createElement('a');
+            link.href = imagem.src;
+            // Define o nome do arquivo
+            link.download = `imagem_criada_${Date.now()}.png`; 
+            
+            // Simula o clique
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // *OPCIONAL*: Adicionar um Toast de sucesso aqui
+        } else {
+            console.warn("Nenhuma imagem válida para baixar.");
+            // *OPCIONAL*: Adicionar um Toast de aviso aqui
+        }
+    }
+}
+
+// 3. FUNÇÃO REUTILIZÁVEL PARA GERENCIAR O ÍCONE DE SELEÇÃO ...
+// ... (o restante do seu código JS continua)
     // 3. FUNÇÃO REUTILIZÁVEL PARA GERENCIAR O ÍCONE DE SELEÇÃO (checked)
 
     function handleSelection(links, clickedElement, isRadioGroup = false) {
@@ -235,7 +299,28 @@ document.addEventListener('DOMContentLoaded', function () {
     if (btnLimpar) {
         btnLimpar.addEventListener('click', clearAllSelections);
     }
+   // 9. LISTENER PARA O BOTÃO DE LIMPAR
+if (btnLimpar) {
+    btnLimpar.addEventListener('click', clearAllSelections);
+}
 
+// ----------------------------------------------------
+// 13. LISTENERS PARA DOWNLOAD E EXCLUSÃO (INSIRA AQUI!)
+// ----------------------------------------------------
+
+if (btnDeleteImage) {
+    // Conecta o botão de lixeira à função de reset
+    btnDeleteImage.addEventListener('click', deleteImageAndReset);
+}
+
+if (btnDownloadImage) {
+    // Conecta o botão de download à função de download
+    btnDownloadImage.addEventListener('click', downloadImage);
+}
+
+
+// 10. ESTADO INICIAL
+// ... (seu código // 10. ESTADO INICIAL continua aqui)
 
     // 10. ESTADO INICIAL
 
@@ -252,6 +337,7 @@ document.addEventListener('DOMContentLoaded', function () {
 }); 
 // ... restante do seu código ...
     
+
 
 // Garante que o código só é executado após o HTML carregar
 document.addEventListener('DOMContentLoaded', () => {

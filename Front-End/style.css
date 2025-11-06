@@ -721,41 +721,41 @@ main.flex-grow-1 {
     font-size: 20px;
 }
  
-/* --- AJUSTES DE POSICIONAMENTO PARA ÍCONES FIXOS NO MOBILE (Telas <= 600px) --- */
+/* --- AJUSTES DE POSICIONAMENTO PARA MOBILE (Telas <= 600px) --- */
 @media screen and (max-width: 600px) {
     
     /* === 1. Botão da Lixeira (#btnDeleteImage) === */
     #btnDeleteImage {
-        /* Sobrescreve as propriedades 'top' e 'left' do desktop */
-        top: auto !important; 
-        left: auto !important; 
+        /* Garante que o posicionamento absoluto seja respeitado */
+        position: absolute !important; 
         
-        /* Nova Posição: Canto Inferior Esquerdo */
-        bottom: 90px; /* 80px acima do botão de download */
-        left: 15px; /* 15px de margem da borda esquerda */
+        /* Reposicionamento para o canto superior direito (próximo à caixa branca) */
+        /* Use um valor pequeno aqui, como 10px ou 20px, NÃO 10000px */
+        top: 50px !important; 
+        right: 10px !important; 
+        left: auto !important; /* Desabilita o left antigo */
         
-        /* Garante que o posicionamento seja relativo ao viewport no mobile */
-        /* Se o 'position: absolute' não funcionar bem, mude para 'fixed' aqui, mas o absolute deve bastar se o main for o viewport. */
-        position: fixed; 
-        
-        /* Opcional: Garante que fique acima de tudo */
-        z-index: 990; 
+        /* Ajuste visual para que o centro fique na borda */
+        transform: translate(50%, 0) !important; 
+        z-index: 10 !important; 
     }
 
     /* === 2. Botão de Download (#btnDownloadImage) === */
     #btnDownloadImage {
-        /* Sobrescreve as propriedades 'top' e 'left' do desktop */
-        top: auto !important; 
-        left: auto !important; 
+        /* Garante que o posicionamento absoluto seja respeitado */
+        position: absolute !important;
         
-        /* Nova Posição: Canto Inferior Esquerdo (mais abaixo) */
-        bottom: 15px; /* Fica a 15px da borda inferior */
-        left: 15px; 
-        
-        position: fixed;
-        z-index: 990;
+        /* Reposicionamento para o canto inferior direito (próximo à caixa branca) */
+        bottom: 40px !important; 
+        right: 90px !important; 
+        left: auto !important; /* Desabilita o left antigo */
+
+        /* Ajuste visual para que o centro fique na borda */
+        transform: translate(50%, 0) !important; 
+        z-index: 10 !important;
     }
 }
+
 /* 1. Sidebar de Matérias (#sidebar) */
 #sidebar {
     /* Permite a transição para abrir/fechar */
