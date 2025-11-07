@@ -489,7 +489,7 @@ main.flex-grow-1 {
 /* AREA DE GERAÇÂO */
 #generation-area{
     border-radius: 12px;
-    max-width: 900px;
+    max-width: 600px;
     height: 75vh;
     min-width: 300px;
     min-height: 400px;
@@ -612,4 +612,7 @@ main.flex-grow-1 {
 
 .base-action-link i {
     font-size: 20px;
+}
+.sidebar-user.open-user {
+    transform: translateX(0);
 }

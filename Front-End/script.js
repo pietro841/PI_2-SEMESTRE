@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-
     // 1. DEFINIÇÃO DAS VARIÁVEIS
     const sidebar = document.getElementById('sidebar');
     const toggleButton = document.getElementById('btnToggleSidebar');
@@ -24,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let toastSuccessInstance = null;
     let toastWarningInstance = null;
-    
+
     // Código da IA 
     const API_KEY = '0000000000';
     const API_URL = 'https://stablehorde.net/api/v2/generate/async';
@@ -81,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // C. Limpa o comando de edição
         if (comandoTextarea && comandoTextarea.value.trim() !== '') {
             comandoTextarea.value = '';
-            comandoTextarea.placeholder = "Girar, mudar cor, etc...";
+            comandoTextarea.placeholder = "Por exemplo: Girar imagem";
             wasAnythingCleared = true;
         }
 
@@ -168,7 +167,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-
     // 6. ACORDEÃO MANUAL E EXPANSÃO DA SIDEBAR
 
     allCollapseToggles.forEach(link => {
@@ -180,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 sidebar.classList.add('expanded');
             }
 
-            // Lógica de Acordeão Manual (restante do seu código)
+            // Lógica de Acordeão Manual 
             const targetId = link.getAttribute('data-bs-target');
             const targetElement = document.querySelector(targetId);
 
@@ -218,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
             handleSelection(subAreaLinks, link);
         });
     });
-
+    // Abrir/Fechar ao clicar no botão principal
 
     // 8. ÍCONE 'CHECKED' - ESTILOS
 
