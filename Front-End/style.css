@@ -274,7 +274,6 @@ main.flex-grow-1 {
 }
 
 .sidebar-title {
-    /* ... (Estilos de padding, margin, etc.) ... */
 
     /* ESSENCIAL para a transição: */
     height: auto;
@@ -375,10 +374,7 @@ main.flex-grow-1 {
     color: white;
 }
 
-
-
 /* 2. ESTADOS ATIVOS  */
-
 
 /* MATÉRIAS  */
 .cor-materia .menu-link:not(.collapsed),
@@ -542,4 +538,78 @@ main.flex-grow-1 {
 #btnSendPrompt .bi-play-fill{
     font-size: 1.8rem;
     margin: 0;
+}
+/* --- ESTILOS DO CABEÇALHO DO PERFIL DENTRO DA SIDEBAR (#sidebarUsuario) --- */
+
+.user-profile-header {
+    /* Padding para dar espaço nas bordas */
+    padding: 15px 20px 10px 20px; 
+    position: relative; 
+}
+
+/* Ícone do Avatar */
+.avatar-circle {
+    width: 48px; 
+    height: 48px;
+    margin: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333; 
+    border-radius: 50%;
+    border: 1px solid #dee2e6; 
+}
+
+.user-profile-header .user-name {
+    margin: 0;
+    font-size: 16px; /* Tamanho padrão */
+    font-weight: 600; 
+    color: #212529; 
+}
+
+.user-profile-header .user-email {
+    margin: 0;
+    font-size: 12px;
+    color: #6c757d; 
+}
+
+
+/* BOTÃO DE FECHAR (X) - Desktop */
+.close-btn-user {
+    /* Garante que o botão X apareça no desktop (já que ele estava 'display: none' na versão anterior) */
+    display: block; 
+    position: static; /* Volta para o fluxo flexbox */
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6c757d;
+    padding: 0;
+}
+
+/* Esconder o botão de fechar no DESKTOP */
+/* REMOVA a linha 'display: none;' que estava fora da media query, se ela existia! */
+
+/* --- NOVO: Estilos do Link de Ação (Mudar Senha) --- */
+.base-action-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    margin-top: 10px;
+    font-size: 15px;
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 500;
+    border-top: 1px solid #dee2e6;
+    transition: background-color 0.2s;
+}
+
+.base-action-link:hover {
+    background-color: #f8f9fa;
+    color: #0b5ed7;
+}
+
+.base-action-link i {
+    font-size: 20px;
 }

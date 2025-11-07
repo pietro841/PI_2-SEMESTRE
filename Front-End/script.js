@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // 1. DEFINIÇÃO DAS VARIÁVEIS
-
     const sidebar = document.getElementById('sidebar');
     const toggleButton = document.getElementById('btnToggleSidebar');
     const detalhesCollapse = document.getElementById('detalhes-colapso');
@@ -16,18 +15,27 @@ document.addEventListener('DOMContentLoaded', function () {
     const estiloLabels = document.querySelectorAll('#estilos-colapso .sub-menu-link');
     const estiloRadios = document.querySelectorAll('input[name="estilo_escolhido"]');
 
-    // Variável para o botão de limpar
+    // Variável botão de limpar
     const btnLimpar = document.getElementById('btnLimparSelecoes');
 
     // Variáveis para os dois Toasts
     const toastSuccessElement = document.getElementById('toastSuccess');
     const toastWarningElement = document.getElementById('toastWarning');
-    
+
     let toastSuccessInstance = null;
     let toastWarningInstance = null;
     
-
-
+    // Código da IA 
+    const API_KEY = '0000000000';
+    const API_URL = 'https://stablehorde.net/api/v2/generate/async';
+    const CHECK_URL_BASE = 'https://stablehorde.net/api/v2/generate/check/';
+    const IMAGE_URL_BASE = 'https://stablehorde.net/api/v2/generate/status/';
+    // 
+    const generateBtn = document.getElementById('generateBtn'); // Botão que inicia a geração
+    const downloadBtn = document.getElementById('btnDownloadImage'); // Botão download
+    const deleteBtn = document.getElementById('btnDeleteImage'); // Botão delete
+    const imgElement = document.getElementById('generatedImage'); // Onde a imagem aparece
+    const statusMessage = document.getElementById('statusMessage'); //Onde o status aparece
 
     // 2. FUNÇÃO DE FECHAMENTO GLOBAL
 
@@ -235,7 +243,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (btnLimpar) {
         btnLimpar.addEventListener('click', clearAllSelections);
     }
-
 
     // 10. ESTADO INICIAL
 

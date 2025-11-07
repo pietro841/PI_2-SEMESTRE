@@ -19,13 +19,13 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api', authRoutes);
-// Rota de teste simples (se você acessar http://localhost:3000)
+// Rota de teste simples 
 app.get('/', (req, res) => {
     res.send('Servidor rodando!');
 });
 
 
-// --- 3. CONEXÃO COM O MONGODB E INICIALIZAÇÃO DO SERVIDOR ---
+// CONEXÃO COM O MONGODB E INICIALIZAÇÃO DO SERVIDOR ---
 
 // Tenta conectar ao MongoDB usando a URI
 mongoose.connect(MONGODB_URI)
