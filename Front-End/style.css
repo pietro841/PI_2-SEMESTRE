@@ -616,3 +616,104 @@ main.flex-grow-1 {
 .sidebar-user.open-user {
     transform: translateX(0);
 }
+/* sidebar usuario (arrumando) 
+/* ================================================= */
+
+/* ================================================= */
+/* === SIDEBAR DO USUÁRIO: POSICIONAMENTO E ANIMAÇÃO === */
+/* ================================================= */
+
+#sidebarUsuario {
+    /* 1. POSICIONAMENTO FIXO (CORREÇÃO DO BUG "LÁ EMBAIXO") */
+    position: fixed;
+    top: 0;
+    right: 0; 
+    
+    /* 2. DIMENSÕES */
+    height: 100vh; 
+    width: 300px; 
+    
+    /* 3. VISIBILIDADE E CAMADA */
+    background-color: #ffffff; 
+    z-index: 1100; 
+    overflow-y: auto; 
+    
+    /* 4. ESTADO INICIAL (ESCONDIDA): FORA DA TELA */
+    transform: translateX(300px); 
+    
+    /* 5. ANIMAÇÃO */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* ESTADO ATIVO: Move a sidebar para dentro da tela */
+#sidebarUsuario.open-user {
+    transform: translateX(0); 
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15); 
+}
+
+/* ================================================= */
+/* ================================================= */
+
+.user-profile-header {
+    /* O d-flex do seu HTML já ajuda, mas garantimos o padding */
+    padding: 15px 20px 10px 20px; 
+    border-bottom: 1px solid #e9ecef; 
+    margin-bottom: 10px; 
+}
+
+/* --- Botão de Fechar 'X' (Garantindo o tamanho de clique) --- */
+.close-btn-user {
+    display: block; 
+    font-size: 24px;
+    line-height: 1; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6c757d;
+    padding: 5px; /* Aumenta a área clicável */
+    /* Garante que o X fique visível */
+    z-index: 1; 
+}
+
+/* --- Estilo dos Links (Histórico, Sair) --- */
+
+#sidebarUsuario nav ul li {
+    padding: 0;
+    margin: 0;
+}
+
+#sidebarUsuario nav ul li a {
+    /* FLEXBOX para alinhar Ícone e Texto */
+    display: flex;
+    align-items: center; 
+    
+    /* Padding para a área clicável */
+    padding: 10px 20px; 
+    
+    /* Estilo e Cor */
+    text-decoration: none;
+    color: #212529; /* Cor do texto mais escura */
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+#sidebarUsuario nav ul li a:hover {
+    background-color: #f1f1f1; 
+}
+
+/* Ajuste e alinhamento dos ícones */
+#sidebarUsuario nav ul li i {
+    font-size: 1.1rem;
+    width: 20px; /* Garante que todos os ícones ocupem o mesmo espaço */
+}
+
+/* --- Estilo dos Divisores --- */
+.header-divider {
+    margin: 0;
+    opacity: 0.5; /* Deixa a linha mais sutil */
+}
+
+.dropdown-divider {
+    margin: 8px 0;
+    opacity: 0.2;
+}
