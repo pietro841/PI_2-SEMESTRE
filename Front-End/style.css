@@ -618,50 +618,60 @@ main.flex-grow-1 {
 }
 /* sidebar usuario (arrumando) 
 /* ================================================= */
-
-/* ================================================= */
 /* === SIDEBAR DO USUÁRIO: POSICIONAMENTO E ANIMAÇÃO === */
 /* ================================================= */
 
 #sidebarUsuario {
-    /* 1. POSICIONAMENTO FIXO (CORREÇÃO DO BUG "LÁ EMBAIXO") */
+    /* 1. POSICIONAMENTO FIXO */
     position: fixed;
-    top: 0;
+    /* *** MUDANÇA AQUI: Abaixa a caixa 60px do topo. Ajuste o valor se necessário. *** */
+    top: 90px; 
     right: 0; 
     
     /* 2. DIMENSÕES */
-    height: 100vh; 
+    height: auto; 
     width: 300px; 
     
     /* 3. VISIBILIDADE E CAMADA */
     background-color: #ffffff; 
     z-index: 1100; 
-    overflow-y: auto; 
-    
+
     /* 4. ESTADO INICIAL (ESCONDIDA): FORA DA TELA */
     transform: translateX(300px); 
     
     /* 5. ANIMAÇÃO */
     transition: transform 0.3s ease-in-out;
+
 }
+
 
 /* ESTADO ATIVO: Move a sidebar para dentro da tela */
 #sidebarUsuario.open-user {
     transform: translateX(0); 
+    /* Manter a sombra lateral */
     box-shadow: -5px 0 20px rgba(0, 0, 0, 0.15); 
 }
 
 /* ================================================= */
+/* === AJUSTES DE ESTILO PARA O VISUAL DA IMAGEM === */
 /* ================================================= */
 
+/* --- 1. CABEÇALHO DO PERFIL (Nome/Email e X) --- */
 .user-profile-header {
-    /* O d-flex do seu HTML já ajuda, mas garantimos o padding */
-    padding: 15px 20px 10px 20px; 
-    border-bottom: 1px solid #e9ecef; 
-    margin-bottom: 10px; 
+    /* Padding para deixar compacto na vertical */
+    padding: 15px 20px; 
+    
+    /* Borda inferior NÍTIDA (como na imagem) */
+    border-bottom: 1px solid #dee2e6; 
+    margin-bottom: 0; 
+
+    /* Garante alinhamento horizontal: Ícone/Nome/Email à esquerda, 'X' à direita */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
 }
 
-/* --- Botão de Fechar 'X' (Garantindo o tamanho de clique) --- */
+/* --- Botão de Fechar 'X' --- */
 .close-btn-user {
     display: block; 
     font-size: 24px;
@@ -670,12 +680,11 @@ main.flex-grow-1 {
     border: none;
     cursor: pointer;
     color: #6c757d;
-    padding: 5px; /* Aumenta a área clicável */
-    /* Garante que o X fique visível */
+    padding: 5px;
     z-index: 1; 
 }
 
-/* --- Estilo dos Links (Histórico, Sair) --- */
+/* --- 2. LINKS DE NAVEGAÇÃO (Histórico, Sair, Mudar Senha) --- */
 
 #sidebarUsuario nav ul li {
     padding: 0;
@@ -683,37 +692,56 @@ main.flex-grow-1 {
 }
 
 #sidebarUsuario nav ul li a {
-    /* FLEXBOX para alinhar Ícone e Texto */
+    /* ESSENCIAL: Flexbox para alinhar Ícone, Texto e a Seta para 'Mudar Senha' */
     display: flex;
     align-items: center; 
     
-    /* Padding para a área clicável */
-    padding: 10px 20px; 
+    /* Padding para a área clicável compacta */
+    padding: 12px 20px; 
     
-    /* Estilo e Cor */
     text-decoration: none;
-    color: #212529; /* Cor do texto mais escura */
+    color: #212529; 
     font-size: 1rem;
     transition: background-color 0.2s;
 }
 
 #sidebarUsuario nav ul li a:hover {
-    background-color: #f1f1f1; 
+    background-color: #f8f9fa; /* Hover sutil */
 }
 
-/* Ajuste e alinhamento dos ícones */
+/* --- 3. ALINHAMENTO DE ÍCONES --- */
+
+/* Ajuste e alinhamento dos Ícones à Esquerda (Histórico, Sair) */
 #sidebarUsuario nav ul li i {
-    font-size: 1.1rem;
-    width: 20px; /* Garante que todos os ícones ocupem o mesmo espaço */
+    font-size: 1.2rem;
+    width: 30px; /* Espaço fixo para ícone */
+    text-align: center;
+    margin-right: 15px; /* Espaço entre ícone e texto */
 }
 
-/* --- Estilo dos Divisores --- */
+/* --- 4. DIVISORES --- */
 .header-divider {
-    margin: 0;
-    opacity: 0.5; /* Deixa a linha mais sutil */
+    /* Linha fina antes de 'Mudar Senha' */
+    border: 0;
+    height: 1px;
+    background-color: #f1f1f1;
+    margin: 10px 0;
+    opacity: 1;
 }
 
 .dropdown-divider {
     margin: 8px 0;
     opacity: 0.2;
+}
+
+/* --- 5. ESTILO ESPECÍFICO PARA A SETA EM 'MUDAR SENHA' --- */
+#sidebarUsuario nav ul li a i.fa-arrow-right {
+    /* Cor da seta (azul, como o link) */
+    color: #007bff; 
+    font-size: 1.2rem;
+    
+    /* A CHAVE para empurrar a seta para o canto direito */
+    margin-left: auto; 
+    margin-right: 0;
+    width: auto;
 }
