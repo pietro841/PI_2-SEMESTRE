@@ -82,7 +82,17 @@
                                 <span class="menu-text">Química</span>
                                 <i class="bi bi-chevron-down ms-auto menu-chevron"></i>
                             </a>
-                            <div class="collapse w-100" id="quimica-subareas"></div>
+                                <!-- SUBTÓPICO QUIMICA -->
+                            <div class="collapse w-100" id="quimica-subareas">
+                                <a href="#" class="sub-menu-link" data-subarea-load="quimica-organica">
+                                    Química Orgânica
+                                    <i class="bi bi-check-circle-fill ms-auto selected-icon"></i>
+                                </a>
+                                <a href="#" class="sub-menu-link" data-subarea-load="fisico-quimica">
+                                    Físico-Química
+                                    <i class="bi bi-check-circle-fill ms-auto selected-icon"></i>
+                                </a>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -122,21 +132,20 @@
                     </li>
                 </ul>
                 <!-- DETALHES ADICIONAIS -->
-                <p class="sidebar-p fw-bold text-uppercase m-0 py-2 small text-white mb-3">Escreva uma mudança desejada
-                    após a geração</p>
+                <p class="sidebar-p fw-bold text-uppercase m-0 py-2 small text-white mb-3">Detalhes da geração</p>
                 <ul class="list-unstyled menu-principal mb-4">
                     <li class="menu-item cor-detalhes">
                         <a href="#detalhes-colapso" class="menu-link collapsed" data-bs-toggle="collapse"
                             data-bs-target="#detalhes-colapso">
                             <i class="bi bi-sliders"></i>
-                            <span class="menu-text">Detalhes(Edição)</span>
+                            <span class="menu-text">Descrição</span>
                             <i class="bi bi-chevron-down ms-auto menu-chevron"></i>
                         </a>
                         <div class="collapse w-100" id="detalhes-colapso">
                             <div class="area-de-edicao p-3">
                                 <textarea class="form-control mb-2" id="comando-edicao-textarea" rows="2"
-                                    placeholder="Girar, mudar cor, etc..."></textarea>
-                                <button class="btn btn-light w-100" id="btnEnviarEdicao">Enviar Edição</button>
+                                ></textarea>
+                                <button class="btn btn-light w-100" id="btnEnviarEdicao">Enviar</button>
                             </div>
                         </div>
                     </li>
