@@ -111,7 +111,10 @@ const handleLogin = async (event) => {
             }).then(() => {
                  // **AQUI VOCÊ DEVE SALVAR O TOKEN JWT:
                  // window.localStorage.setItem('token', result.token); 
-                 
+                 if (result.token && result.user && result.user.email) {
+                    window.localStorage.setItem('token', result.token); 
+                    window.localStorage.setItem('userEmail', result.user.email); 
+                }
                 // 🚨 REDIRECIONA para a Página Principal
                 window.location.href = 'PaginaPrincipal.html';
             });
