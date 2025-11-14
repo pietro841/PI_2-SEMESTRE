@@ -85,6 +85,10 @@ window.saveHistory = async (prompt, base64Image) => {
  * 3. CARREGA O HISTÓRICO: Configura o listener em tempo real (onSnapshot)
  * e renderiza os itens na UI.
  */
+/**
+ * 3. CARREGA O HISTÓRICO: Configura o listener em tempo real (onSnapshot)
+ * e renderiza os itens na UI usando CLASSES BOOTSTRAP.
+ */
 function setupHistoryListener() {
     if (!db || !userId) return;
 
@@ -97,10 +101,16 @@ function setupHistoryListener() {
 
     onSnapshot(q, (snapshot) => {
         const historyContent = document.getElementById('history-content');
-        historyContent.innerHTML = '';
+        historyContent.innerHTML = ''; // Limpa o conteúdo
 
         if (snapshot.empty) {
-            historyContent.innerHTML = '<p class="text-gray-500 text-center p-4">Nenhuma imagem gerada ainda. Vá para a aba "Gerar" para começar!</p>';
+            // MENSAGEM VAZIA (USANDO CLASSES BOOTSTRAP)
+            historyContent.innerHTML = `
+                <div class="text-center p-5 text-muted">
+                    <i class="bi bi-info-circle fs-4 mb-2 d-block"></i>
+                    <p class="mb-0">Histórico vazio. Comece agora a gerar imagens</p>
+                </div>
+            `;
             return;
         }
 
@@ -110,18 +120,19 @@ function setupHistoryListener() {
             const time = data.timestamp ? new Date(data.timestamp.seconds * 1000).toLocaleString('pt-BR') : 'Data Indisponível';
             const promptPreview = data.prompt.substring(0, 80) + (data.prompt.length > 80 ? '...' : '');
 
-            // Cria o elemento HTML para o item do histórico
+            // Cria o elemento HTML para o item do histórico (COM CLASSES BOOTSTRAP)
             historyContent.innerHTML += `
-                <div class="bg-gray-50 p-4 rounded-lg shadow-md mb-4 hover:shadow-xl transition-shadow cursor-pointer">
-                    <p class="text-xs text-gray-500 mb-2">${time}</p>
-                    <p class="font-semibold mb-2 text-sm">${promptPreview}</p>
+                <div class="bg-light p-3 rounded shadow-sm mb-3">
+                    <p class="text-muted mb-1 small">${time}</p>
+                    <p class="fw-semibold mb-2">${promptPreview}</p>
                     <img src="data:image/jpeg;base64,${data.base64}" alt="Imagem gerada" 
-                            class="w-full h-auto rounded-lg mt-2 border border-gray-200">
+                        class="img-fluid rounded mt-2 border border-secondary">
                 </div>
             `;
         });
     }, (error) => {
         console.error("Erro ao carregar histórico:", error);
-        document.getElementById('history-content').innerHTML = '<p class="text-red-500 text-center p-4">Erro ao carregar histórico.</p>';
+        // MENSAGEM DE ERRO (USANDO CLASSE BOOTSTRAP)
+        document.getElementById('history-content').innerHTML = '<p class="text-danger text-center p-4">Erro ao carregar histórico.</p>';
     });
 }

@@ -200,9 +200,9 @@ body {
 
 /*VALE PRO BODY DA PAGINA PRINCIPAL */
 
-.layout-principal {
+.layout-principal{
     background-color: #D9D9D9;
-    font-size: 20px;
+    font-size: 1.1rem;
 }
 
 .bg-cinza-custom {
@@ -216,7 +216,7 @@ body {
 
 /* Estilos .expanded, .minimized, .menu-content-wrapper (MANTIDOS) */
 .bg-cinza-custom.expanded {
-    width: 24vw;
+    width: 25vw;
     max-width: 50rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -246,7 +246,8 @@ body {
 main.flex-grow-1 {
     flex-grow: 1;
 }
-
+/* configurações telas */
+/* telas pequenas */
 @media (max-width: 768px) {
     .bg-cinza-custom.expanded {
         /* Aumenta a largura para 80% da tela no mobile */
@@ -263,7 +264,7 @@ main.flex-grow-1 {
         margin-top: 5px;
     }
 }
-
+/*  */
 /* CONFIG COLLAPSE  */
 .collapse:not(.show) {
     display: none;

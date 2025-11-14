@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnUsuario = document.getElementById('btnUsuario');
     const sidebarUsuario = document.getElementById('sidebarUsuario');
     const btnCloseUser = document.getElementById('btnCloseUser');
+    const sidebar = document.getElementById('sidebar'); 
+    const allCollapseToggles = document.querySelectorAll('[data-bs-toggle="collapse"]');
 
     // Nomes de classes únicos para evitar conflitos
     const OPEN_CLASS = 'open-user';
