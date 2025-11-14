@@ -202,6 +202,7 @@ body {
 
 .layout-principal {
     background-color: #D9D9D9;
+    font-size: 20px;
 }
 
 .bg-cinza-custom {
@@ -216,6 +217,7 @@ body {
 /* Estilos .expanded, .minimized, .menu-content-wrapper (MANTIDOS) */
 .bg-cinza-custom.expanded {
     width: 24vw;
+    max-width: 50rem;
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 1rem;
@@ -488,11 +490,12 @@ main.flex-grow-1 {
 
 /* AREA DE GERAÇÂO */
 #generation-area{
-    border-radius: 12px;
-    max-width: 600px;
-    height: 75vh;
-    min-width: 300px;
-    min-height: 400px;
+    border-radius: 0.75rem;
+    width: 100%;
+    max-width: 55rem;
+    height: auto;
+    min-width: 18.75rem;
+    min-height: 70vh;
 }
 
 #image-container{

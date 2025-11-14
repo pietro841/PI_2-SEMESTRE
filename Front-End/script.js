@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (detalhesCollapse && comandoTextarea) {
         detalhesCollapse.addEventListener('hide.bs.collapse', function () {
             comandoTextarea.value = "";
-            comandoTextarea.placeholder = "Girar, mudar cor, etc...";
+            
         });
     }
 
@@ -242,11 +242,5 @@ document.addEventListener('DOMContentLoaded', function () {
         btnLimpar.addEventListener('click', clearAllSelections);
     }
 
-    // 10. ESTADO INICIAL
-
-    if (sidebar) {
-        sidebar.classList.remove('expanded');
-        sidebar.classList.add('minimized');
-        closeAllCollapses();
-    }
+    
 });
