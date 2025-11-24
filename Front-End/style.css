@@ -247,6 +247,64 @@ main.flex-grow-1 {
     flex-grow: 1;
 }
 /* configurações telas */
+/* telas pequenas*/
+@media (max-width: 768px) {
+    /* ********************************************** */
+    /* *** ajuste dos 2 icones lixeira e download(Alinhar à Direita) *** */
+    /* ********************************************** */
+}
+
+/* *** SOLUÇÃO FINAL: FORÇA EMPILHAMENTO NO MOBILE *** */
+@media (max-width: 768px) {
+    /* ... seus outros estilos de mobile ... */
+
+    /* Aumenta a especificidade do seletor para garantir que a coluna seja aplicada */
+    .main-content .row .col-md-auto.order-1 {
+        position: absolute !important; 
+        
+        /* Força a coluna com prioridade máxima */
+        flex-direction: column !important;
+        
+        /* Ajuste de Posição: AUMENTE ESTE VALOR PARA DESCER, DIMINUA PARA SUBIR */
+        top: 320px !important; 
+        
+        right: 5px !important; 
+        
+        width: auto !important; 
+        margin: 0 !important; 
+        padding: 0 !important;
+        height: auto !important;
+    }
+
+    /* 2. Ajuste de Estilo dos Botões e Espaçamento Vertical */
+    .main-content .row .col-md-auto.order-1 button {
+        /* ... estilos mantidos ... */
+    }
+    
+    /* ... seus outros estilos de mobile ... */
+}
+
+
+/* 2. Ajuste de Estilo dos Botões e Espaçamento Vertical */
+.main-content .col-md-auto.order-1 button {
+    /* Garante espaçamento entre o download e a lixeira */
+    margin-bottom: 10px !important; 
+    
+    /* Garante que os botões não se misturem */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+    width: 40px !important; 
+    height: 40px !important;
+    padding: 0 !important;
+}
+
+/* 3. Ajuste do Ícone dentro do botão */
+.main-content .col-md-auto.order-1 i {
+    font-size: 1.3rem !important; 
+}
+/* */
 /* telas pequenas */
 @media (max-width: 768px) {
     .bg-cinza-custom.expanded {
@@ -738,4 +796,33 @@ main.flex-grow-1 {
     margin-left: auto; 
     margin-right: 0;
     width: auto;
+}
+/* REFORÇO DE ESTILOS PARA TELAS GRANDES (DESKTOP) */
+@media (min-width: 768px) {
+    /* Força o layout de desktop a ser COLUNA/Empilhado e ignora a margin-top do mobile */
+    .main-content .col-md-auto.order-md-2 {
+        flex-direction: column !important; 
+        align-items: center !important; 
+        gap: 3rem !important; 
+        width: auto !important;
+        margin-top: 0 !important; /* ZERA QUALQUER MARGEM DE CIMA AQUI */
+    }
+}
+/* TELAS PEQUENAS (MOBILE) */
+@media (max-width: 800px) {
+    
+    /* ********************************************** */
+    /* *** NOVO AJUSTE: LIMITA A LARGURA DO CONTEÚDO PARA MOSTRAR MAIS FUNDO CINZA *** */
+    /* ********************************************** */
+    .main-content {
+        /* Reduz a largura máxima que o contêiner da imagem pode usar. */
+        /* Exemplo: 90% da largura da tela */
+        max-width: 90vw; 
+        
+        /* Centraliza o conteúdo (já deve estar centralizado pelo mx-auto do Bootstrap) */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* O restante dos seus estilos de mobile... */
 }
