@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // C. Limpa o comando de edição
         if (comandoTextarea && comandoTextarea.value.trim() !== '') {
             comandoTextarea.value = '';
-            comandoTextarea.placeholder = "Por exemplo: Girar imagem";
+            
             wasAnythingCleared = true;
         }
 
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (detalhesCollapse && comandoTextarea) {
         detalhesCollapse.addEventListener('hide.bs.collapse', function () {
             comandoTextarea.value = "";
-            
+
         });
     }
 
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 sidebar.classList.add('expanded');
             }
 
-            // Lógica de Acordeão Manual 
+            // Lógica de Acordeão Manual
             const targetId = link.getAttribute('data-bs-target');
             const targetElement = document.querySelector(targetId);
 
@@ -242,5 +242,5 @@ document.addEventListener('DOMContentLoaded', function () {
         btnLimpar.addEventListener('click', clearAllSelections);
     }
 
-    
+
 });

@@ -484,7 +484,6 @@ main.flex-grow-1 {
 /* AREA DA MAIN */
 
 .main-content{
-    min-height: 100vh;
     padding: 20px;
 
 }
@@ -492,25 +491,16 @@ main.flex-grow-1 {
 /* AREA DE GERAÇÂO */
 #generation-area{
     border-radius: 0.75rem;
-    width: 100%;
-    max-width: 55rem;
-    height: auto;
-    min-width: 18.75rem;
-    min-height: 70vh;
 }
 
 #image-container{
-    flex-grow: 1;
-    /* Ocupa todo o espaço vertical restante */
+    /* flex-grow: 1; */
     padding: 30px;
-    /* Espaçamento interno */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     background-color: #f8f9fa;
     color: #6c757d;
-    font-size: 1.1rem;
+     font-size: 1.1rem; 
+    aspect-ratio: 1 / 1; 
+
 }
 
 /* Barra de Comando (Input Group) */

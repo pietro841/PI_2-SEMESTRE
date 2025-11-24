@@ -17,32 +17,48 @@ const handleRegister = async (event) => {
         password: password,
         confirmPassword: confirmPassword
     };
-
-    // VALIDAÇÃO UX: Se as senhas não batem, mostre SweetAlert e saia
+    //CAMPOS NAO PREENCHIDOS
+    if (!email || !password || !confirmPassword) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Campos obrigatórios',
+            text: 'Preencha todos os campos antes de continuar.',
+        });
+        return;
+    }
+    // SENHAS DIFERENTES
     if (password !== confirmPassword) {
         Swal.fire({
             icon: 'warning',
             title: 'Erro de Preenchimento',
             text: 'As senhas digitadas não coincidem.',
         });
-        return; 
+        return;
     }
-
+    //TAMANHO DE SENHA
+    if (password.length < 5) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Senha muito curta',
+            text: 'A senha deve ter pelo menos 5 caracteres.',
+        });
+        return;
+    }
     try {
         const response = await fetch(`${BACKEND_URL}/register`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json', 
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data), 
+            body: JSON.stringify(data),
         });
 
-        const result = await response.json(); 
+        const result = await response.json();
 
-       
+
 
         if (response.ok) { // Status 201 (Sucesso)
-            
+
             // 🚀 SweetAlert para SUCESSO e Redirecionamento
             Swal.fire({
                 icon: 'success',
@@ -54,9 +70,9 @@ const handleRegister = async (event) => {
                 // 🚨 REDIRECIONA para a Tela de LOGIN APÓS o SweetAlert fechar
                 window.location.href = 'TelaLogin.html';
             });
-            
+
         } else { // Status 400 ou 500 (Erro)
-            
+
             // ❌ SweetAlert para ERRO no Cadastro
             Swal.fire({
                 icon: 'error',
@@ -64,7 +80,7 @@ const handleRegister = async (event) => {
                 text: result.msg, // Usa a mensagem de erro do Backend
             });
         }
-        
+
 
     } catch (error) {
         // 🚨 SweetAlert para ERRO de Conexão
@@ -86,7 +102,17 @@ const handleLogin = async (event) => {
 
     // Código para capturar email/senha (adaptado para clareza)
     const email = document.getElementById('receber-email').value;
-    const password = document.getElementById('receber-senha').value; 
+    const password = document.getElementById('receber-senha').value;
+    //CAMPOS NAO PREENCHIDOS
+    if (!email || !password) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Campos obrigatórios',
+            text: 'Digite seu email e senha para continuar.',
+        });
+        return; // Sai da função sem chamar o backend
+    }
+
     const data = { email, password };
 
 
@@ -100,7 +126,7 @@ const handleLogin = async (event) => {
         const result = await response.json();
 
         if (response.ok) { // Sucesso no Login (Status 200)
-            
+
             // 🚀 SweetAlert para SUCESSO no Login e Redirecionamento
             Swal.fire({
                 icon: 'success',
@@ -109,18 +135,18 @@ const handleLogin = async (event) => {
                 timer: 2000,
                 showConfirmButton: false
             }).then(() => {
-                 // **AQUI VOCÊ DEVE SALVAR O TOKEN JWT:
-                 // window.localStorage.setItem('token', result.token); 
-                 if (result.token && result.user && result.user.email) {
-                    window.localStorage.setItem('token', result.token); 
-                    window.localStorage.setItem('userEmail', result.user.email); 
+                // **AQUI VOCÊ DEVE SALVAR O TOKEN JWT:
+                // window.localStorage.setItem('token', result.token); 
+                if (result.token && result.user && result.user.email) {
+                    window.localStorage.setItem('token', result.token);
+                    window.localStorage.setItem('userEmail', result.user.email);
                 }
                 // 🚨 REDIRECIONA para a Página Principal
                 window.location.href = 'PaginaPrincipal.html';
             });
 
-        } else { 
-            
+        } else {
+
             // ERRO no Login
             Swal.fire({
                 icon: 'error',
@@ -130,7 +156,7 @@ const handleLogin = async (event) => {
         }
 
     } catch (error) {
-         // 🚨 SweetAlert para ERRO de Conexão
+        // 🚨 SweetAlert para ERRO de Conexão
         Swal.fire({
             icon: 'warning',
             title: 'Erro de Conexão',

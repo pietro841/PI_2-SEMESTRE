@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-        }); // Fim do allCollapseToggles.forEach
-    }); // Fim do link.addEventListener
+        }); 
+    }); 
 
 });

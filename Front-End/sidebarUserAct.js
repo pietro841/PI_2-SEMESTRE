@@ -37,12 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // C) LÓGICA DE MUDAR SENHA
     
-    if (btnChangePassword) {
-        btnChangePassword.addEventListener('click', (event) => {
-            event.preventDefault(); 
-            window.location.href = 'EsqueceuSenha.html'; 
-        });
-    }
+    
     if (linkHistorico && sidebarUsuario && historyModal) {
         linkHistorico.addEventListener('click', (event) => {
             event.preventDefault(); 

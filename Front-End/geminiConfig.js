@@ -1,3 +1,4 @@
+import { salvarHistorico } from "./historicoUser.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Elementos principais para a geração
@@ -39,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 Swal.fire({
                     title: 'Atenção!',
                     text: 'Você deve preencher os 3 tópicos (Subtópico, Estilo e Descrição) para gerar a imagem.',
-                    icon: 'warning', 
+                    icon: 'warning',
                     confirmButtonText: 'OK'
                 });
 
@@ -48,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 3. Feedback visual para o usuário (Carregando)
             imageContainer.innerHTML = `
-                <div class="d-flex flex-column align-items-center justify-content-center h-100 p-5">
+                <div  style="style="width:100%;height:100%;aspect-ratio:1/1" class="d-flex flex-column align-items-center justify-content-center p-5">
                     <div class="spinner-border text-primary" role="status">
                         <span class="visually-hidden">Carregando...</span>
                     </div>
@@ -73,8 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 imageContainer.classList.remove('loading');
 
                 if (data.image) {
-                    // 5. Exibe a imagem gerada (em Base64)
-                    imageContainer.innerHTML = `<img src="data:image/jpeg;base64,${data.image}" alt="Imagem Gerada por IA" class="img-fluid generated-image" />`;
+                    const imageId = data.imageId || 'gerada-sem-id'; 
+
+                    displayGeneratedImage(data.image, imageId);
+                    salvarHistorico(descricaoAdicional, data.image);
                 } else {
                     // Lida com erros do servidor
                     imageContainer.innerHTML = `

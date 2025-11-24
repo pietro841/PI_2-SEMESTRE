@@ -10,21 +10,26 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const authRoutes = require('./routes/auth');
 const sharp = require('sharp');
+const fs = require('fs');
+const path = require('path');
+
 // Conexão .env
 require('dotenv').config();
-// FIREBASE
+
+
+//FIrebase
 const firebaseConfig = {
-    apiKey: process.env.FIREBASE_API_KEY,
-    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.FIREBASE_PROJECT_ID,
-    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.FIREBASE_APP_ID,
-    measurementId: process.env.FIREBASE_MEASUREMENT_ID,
+    apiKey: "AIzaSyBZmJ7VYD-XX5KSD0GE7XP4MykNt9yUIzw",
+    authDomain: "educaia-4824c.firebaseapp.com",
+    projectId: "educaia-4824c", 
+    storageBucket: "educaia-4824c.firebasestorage.app",
+    messagingSenderId: "654013758102",
+    appId:"1:654013758102:web:9426387971ff68fbf8a0b7",
 };
+console.log(firebaseConfig);
 const firebaseConfigJSON = JSON.stringify(firebaseConfig);
 //GEMINI
-const { generateImage} = require('./configIA');
+const { generateImage } = require('./configIA');
 
 
 // --- 1. STRING DE CONEXÃO DO MONGODB---
@@ -43,34 +48,61 @@ app.use('/api', authRoutes);
 app.get('/', (req, res) => {
     res.send('Servidor rodando!');
 });
+app.get('/PaginaPrincipal.html', (req, res) => {
+    try {
+        const filePath = path.join(__dirname, 'PaginaPrincipal.html');
+        let htmlContent = fs.readFileSync(filePath, 'utf8');
+        const customToken = '';
+        // Cria o script de injeção usando o JSON stringificado
+        const injectionScript = `
+            <script>
+                // O frontend JS espera esta variável global
+                window.__firebase_config = ${firebaseConfigJSON};
+                window.__app_id = '${process.env.FIREBASE_APP_ID}';
+                window.__firebase_custom_token = '${customToken}';
+            </script>
+        `;
 
+        // Injeta o script logo antes da tag </head>
+        htmlContent = htmlContent.replace(
+            /(<body[^>]*>)/i,
+            `$1\n${injectionScript}`
+        );
+
+
+        res.send(htmlContent);
+    } catch (error) {
+        console.error('Erro ao servir PaginaPrincipal.html:', error);
+        res.status(500).send('Falha ao carregar a página.');
+    }
+});
 //GEMINI CONFIGURAÇÔES
 app.post('/generate-image', async (req, res) => {
     try {
         // CORREÇÃO: Receber todas as variáveis do Frontend
-        const { subarea, estilo, descricaoAdicional } = req.body; 
-        
+        const { subarea, estilo, descricaoAdicional } = req.body;
+
         // 1. MONTAGEM DO PROMPT
         let promptDeGeracao = "";
 
         if (subarea) {
             promptDeGeracao += `Crie uma imagem técnica e didática para o conceito de ${subarea}. `;
-            
+
             // Adiciona as palavras-chave de Física
-            const chaveEspecifica = CHAVES_FISICA[subarea]; 
+            const chaveEspecifica = CHAVES_FISICA[subarea];
             if (chaveEspecifica) {
                 promptDeGeracao += `A ilustração deve incluir os seguintes elementos chave: ${chaveEspecifica}. `;
             }
         }
-        
+
         if (estilo) {
             promptDeGeracao += `O estilo da imagem deve ser: ${estilo}. `;
         }
-        
+
         if (descricaoAdicional) {
             promptDeGeracao += `Instruções de detalhe do usuário: ${descricaoAdicional}.`;
         }
-        
+
         // CORREÇÃO: Checagem de prompt vazio
         if (promptDeGeracao.length === 0) {
             return res.status(400).json({ error: 'Nenhuma instrução fornecida para gerar a imagem.' });
@@ -99,9 +131,11 @@ mongoose.connect(MONGODB_URI)
         // Se a conexão com o DB funcionar, inicia o servidor Express
         app.listen(PORT, () => {
             console.log(`Servidor rodando em http://localhost:${PORT}`);
-            
+
         });
     })
     .catch((error) => {
         console.error(error.message);
     });
+
+
